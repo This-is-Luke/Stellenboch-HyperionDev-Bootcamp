@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title> 
+    <!-- below is the styling of the page to neaten the page -->
+    <style>
+        body {
+            background: linear-gradient(to bottom, #33ccff 0%, #000000 100%);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        #header {
+            text-align: center;
+            border-bottom: 3px solid #f1f1f1;
+            color: white;
+        }
+        #form {
+            color: white;
+            border: 3px solid #f1f1f1;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #tempEnterText {
+            display: flex;
+            align-items: center;
+            width: 150px;
+            padding-left: 25px;
+        }
+        #selectUnitText {
+            display: flex;
+            align-items: center;
+            width: 150px;
+            padding-left: 40px;
+        }
+        #result {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+        }
+        input, select {
+            display: inline-block;
+            width: 200px;
+        }
+        button {
+            display: inline-block;
+            width: 200px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            text-align: center;
+            font-size: 1.5rem;
+            border: 3px solid #f1f1f1;
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            color: white;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+        }
+    </style> 
+    <!-- below is the link to the js file -->
+    <script src="./temperature.js"></script> 
+</head>
+<body>
+    <!-- below is the start of the page -->
+    <h1 id="header">Temperature Converter</h1> 
+    <br>
+    <!-- below is a div with lables and inputs -->
+    <div id="form">         
+        <label for="temp" id="selectUnitText">Select Unit</label>
+        <select name="unit" id="unit">
+            <option value="c">Celsius</option>
+            <option value="f">Fahrenheit</option>
+            <option value="k">Kelvin</option>
+        </select>
+        <br><br>
+        <label for="temp" id="tempEnterText">Temperature</label>
+        <input type="text" name="temp" id="temp">
+        <br><br>
+        <button onclick="convertTemperature()">Convert</button>
+    </div>
+    <!-- below is the output that the js file references -->
+    <br><br>
+    <p id="result"></p>
+
+</body>
+<!-- below is the footer, this I made for another project of mine called a mealsorter and just grabbed it from there -->
+<footer>
+    <p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+    <script>
+        function updateDateTime() {
+            let currentDate = new Date()
+            let dateTimeString = currentDate.toLocaleString()
+            document.getElementById("currentDateTime").innerHTML =
+                dateTimeString
+        }
+        setInterval(updateDateTime, 1000);
+    </script>
+</footer>
+
+</html>
+
+<!-- 
+    In total this project only took about a hour. I had some issue with the javascript file and linking it but I found the issue was with 
+    a VScode extention I am using called LiveServer. After a simple reset the files would link without issue.
+    The reference I used was multiple pages in https://www.w3schools.com/ as well as referencing the code from the previous project.
+    To find the solutions quickly I also used the new Bing search engine which is very fast at finding solutions to problems.
+ -->

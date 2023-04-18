@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Message Encoder</title>
+    <script src="./cypher.js"></script>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <h1>Message Encoder</h1>
+    <form onsubmit="return onSubmit()">
+      <label for="messageInput">Enter a sneaky message to encode and send to someone: </label><br>
+      <input type="text" id="messageInput" name="messageInput"><br>
+      <br>
+      <input type="submit" value="Encode">
+    </form>
+    <br>
+    <div id="secretMessage"></div>
+
+    <h1>Message Decoder</h1>
+    <form onsubmit="return onDecodeSubmit()">
+      <label for="decodeMessageInput">What good is a encoder if you cant decode the message? enter a coded message: </label><br>
+      <input type="text" id="decodeMessageInput" name="decodeMessageInput"><br>
+      <br>
+      <input type="submit" value="Decode">
+    </form>
+    <br>
+    <div id="decodedMessage"></div>
+  </body>
+</html>
