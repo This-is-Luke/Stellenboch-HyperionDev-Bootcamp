@@ -4,9 +4,9 @@ class Employee
 {
 constructor(name, age, salesTarget) 
 {
-    this.name = name;
-    this.age = age;
-    this.salesTarget = salesTarget;
+    this.name = name
+    this.age = age
+    this.salesTarget = salesTarget
 }
 }
 
@@ -15,13 +15,13 @@ class SalariedEmployee extends Employee
 {
 constructor(name, age, salesTarget, salary) 
 {
-    super(name, age, salesTarget);
-    this.salary = salary;
+    super(name, age, salesTarget)
+    this.salary = salary
 }
 //Simple if statement (in shorthand) to check if the sales are greater than the sales target, if so, the salaried employee gets a 10% bonus
 calculatePayout(sales) 
 {
-    return sales > this.salesTarget ? this.salary * 1.1 : this.salary;
+    return sales > this.salesTarget ? this.salary * 1.1 : this.salary
 }
 }
 
@@ -29,15 +29,15 @@ class HourlyEmployee extends Employee
 {
 constructor(name, age, salesTarget, hourlyRate, hoursLogged) 
 {
-    super(name, age, salesTarget);
-    this.hourlyRate = hourlyRate;
-    this.hoursLogged = hoursLogged;
+    super(name, age, salesTarget)
+    this.hourlyRate = hourlyRate
+    this.hoursLogged = hoursLogged
 }
 // again a simple if statement to check if the sales are greater than the sales target, if so, the hourly employee gets a 50% bonus
 calculatePayout(sales) 
 {
-    const rate = sales > this.salesTarget ? this.hourlyRate * 1.5 : this.hourlyRate;
-    return rate * this.hoursLogged;
+    const rate = sales > this.salesTarget ? this.hourlyRate * 1.5 : this.hourlyRate
+    return rate * this.hoursLogged
 }
 }
 
@@ -45,48 +45,68 @@ class HybridEmployee extends Employee
 {
 constructor(name, age, salesTarget, salary, hourlyRate, hoursLogged) 
 {
-    super(name, age, salesTarget);
-    this.salary = salary;
-    this.hourlyRate = hourlyRate;
-    this.hoursLogged = hoursLogged;
+    super(name, age, salesTarget)
+    this.salary = salary
+    this.hourlyRate = hourlyRate
+    this.hoursLogged = hoursLogged
 }
 // again a simple if statement to check if the sales are greater than the sales target, if so, the hybrid employee gets a 20% bonus
 calculatePayout(sales) 
 {
-    const rate = sales > this.salesTarget ? this.hourlyRate * 1.2 : this.hourlyRate;
-    return this.salary + rate * this.hoursLogged;
+    const rate = sales > this.salesTarget ? this.hourlyRate * 1.2 : this.hourlyRate
+    return this.salary + rate * this.hoursLogged
 }
 }
   
   //Then I made a function to display the payout of each employee
   function displayPayout(employee, sales) 
   {
-    // a variable to store the payout
-    const payout = employee.calculatePayout(sales);
-    // a variable to store the type of employee
-    const employeeType = employee.constructor.name;
-    // Then a consoloe.log template literal to display the name, type, payout, sales and sales target based off the new employees
-    console.log(`${employee.name} (${employeeType}): R${payout.toFixed(2)} (Sales: ${sales}, Target: ${employee.salesTarget})`);
+    const payout = employee.calculatePayout(sales)
+    const employeeType = employee.constructor.name
+    const formula = getFormula(employeeType, sales, employee)
+    console.log(`${employee.name} (${employeeType}): R${payout.toFixed(2)} (${formula})`)
+  }
+
+  //Then I need a function to get the formula for each employee
+  function getFormula(employeeType, sales, employee) 
+  { 
+    //I used a if statement to check which employee type it is and then return the correct formula
+    if (employeeType === 'SalariedEmployee') 
+    {
+      return sales > employee.salesTarget ? 'salary * 1.1' : 'salary'
+    } 
+    else if (employeeType === 'HourlyEmployee') 
+    {
+      return sales > employee.salesTarget ? 'hourlyRate * 1.5 * hoursLogged' : 'hourlyRate * hoursLogged'
+    } 
+    else if (employeeType === 'HybridEmployee') 
+    {
+      return sales > employee.salesTarget ? 'salary + hourlyRate * 1.2 * hoursLogged' : 'salary + hourlyRate * hoursLogged'
+    }
   }
   
-// Then I created the new employees with constructor arguments (I choose to use more humane salaries and hourly rates)
-//The sallaried employees only have 4 arguments, the name, age, sales target and salary
-  const salariedEmployee1 = new SalariedEmployee('Luke', 30, 10, 30000);
-  const salariedEmployee2 = new SalariedEmployee('Michelle', 35, 15, 35000);
-//The hourly employees have 5 arguments, the name, age, sales target, hourly rate and hours logged
-  const hourlyEmployee1 = new HourlyEmployee('Charlie', 25, 20, 15, 1600);
-  const hourlyEmployee2 = new HourlyEmployee('Billy', 28, 25, 18, 1700);
-//The hybrid employees have 6 arguments, the name, age, sales target, salary, hourly rate and hours logged
-  const hybridEmployee1 = new HybridEmployee('Tyron', 32, 30, 25000, 120, 100);
-  const hybridEmployee2 = new HybridEmployee('Chad', 40, 35, 28000, 140, 80);
+  //Then I created the employees and the sales data arrayy
+  const salariedEmployee1 = new SalariedEmployee('Luke', 30, 10000, 30000)
+  const salariedEmployee2 = new SalariedEmployee('Michelle', 35, 15000, 35000)
+  const hourlyEmployee1 = new HourlyEmployee('Charlie', 25, 8000, 20, 1600)
+  const hourlyEmployee2 = new HourlyEmployee('Billy', 28, 9000, 25, 1700)
+  const hybridEmployee1 = new HybridEmployee('Tyron', 40, 12000, 25000, 15, 100)
+  const hybridEmployee2 = new HybridEmployee('Chad', 45, 13000, 28000, 18, 120)
+  const salesData = 
+  {
+    Alice: 11000,
+    Bob: 14000,
+    Carol: 8500,
+    David: 9500,
+    Eve: 12500,
+    Frank: 13500,
+  }
   
-// and filled out the simple tests  
-  displayPayout(salariedEmployee1, 12);
-  displayPayout(salariedEmployee2, 14);
-  displayPayout(hourlyEmployee1, 22);
-  displayPayout(hourlyEmployee2, 24);
-  displayPayout(hybridEmployee1, 32);
-  displayPayout(hybridEmployee2, 36);
-
+  //Then I could call the displayPayout function for each employee and the sales data for each
+  displayPayout(salariedEmployee1, salesData['Alice'])
+  displayPayout(salariedEmployee2, salesData['Bob'])
+  displayPayout(hourlyEmployee1, salesData['Carol'])
+  displayPayout(hourlyEmployee2, salesData['David'])
+  displayPayout(hybridEmployee1, salesData['Eve'])
+  displayPayout(hybridEmployee2, salesData['Frank'])
   
-// my fluenccy and understanding is increasing with each submission, I am starting to understand the concepts better and how to apply them to my code.
