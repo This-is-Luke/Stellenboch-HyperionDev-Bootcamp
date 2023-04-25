@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Favorite Hobby</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<header>
+			<h1>My Favorite Hobby: Gaming</h1>
+			<nav>
+				<ul>
+					<li><a href="#introduction">Introduction</a></li>
+					<li><a href="#gear">Gear</a></li>
+					<li><a href="#Competition">Competition</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<img
+				src="./gamergirlpic.jpg"
+				alt="gamergirlpic">
+			<section id="introduction">
+				<h2>Introduction</h2>
+				<p>
+					Gaming is more than just a way to pass time. It's a hobby that
+					challenges your skills, tests your reflexes, and connects you
+					with other players. I love playing competitive shooters, where
+					every move counts and teamwork is key. There's nothing like the
+					thrill of winning a match with your friends or beating a tough
+					opponent.
+				</p>
+			</section>
+			<section id="gear">
+				<h2>Gear</h2>
+				<ul>
+					<li>Graphics Card equivalint to 2080ti or higher</li>
+					<li>CPU equivalint to i7 10900k or higher</li>
+					<li>High refresh rate display at least 165hz with Gsync</li>
+				</ul>
+			</section>
+			<section id="Competition">
+				<h2>Competition</h2>
+				<article>
+					<h3>Battlefield 4</h3>
+					<p>
+						Battlefield 4 is a popular first-person shooter game that
+						attracts millions of players worldwide. Some of them are not
+						just casual gamers, but competitive ones who join tournaments
+						and leagues to test their skills and strategies. Competitive
+						Battlefield 4 gamers train hard, practice often, and use the
+						best equipment and software to gain an edge over their
+						opponents. They also form teams and clans to coordinate their
+						tactics and communicate effectively. Competitive Battlefield 4
+						gamers are passionate, dedicated, and ambitious. They aim to
+						win prizes, fame, and glory in the gaming community.
+					</p>
+				</article>
+				<article>
+					<h3>Call of Duty MW</h3>
+					<p>
+						Competitive Call of Duty MW gamers are a special breed of
+						players who dedicate hours of practice and strategy to master
+						the popular first-person shooter game. They compete in
+						tournaments and leagues, both online and offline, for glory
+						and cash prizes. Some of them even make a living from
+						streaming their gameplay and attracting sponsors. Competitive
+						Call of Duty MW gamers have to deal with high pressure,
+						fast-paced action, and constant changes in the game's meta.
+						They also have to balance their passion with their personal
+						lives, health, and education. Competitive Call of Duty MW
+						gamers are not just playing a game, they are living a
+						lifestyle.
+					</p>
+				</article>
+			</section>
+			<a href="#top">Back to top</a>
+		</main>
+		<footer>
+			<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+			<script>
+				function updateDateTime() {
+					let currentDate = new Date();
+					let dateTimeString = currentDate.toLocaleString();
+					document.getElementById('currentDateTime').innerHTML =
+						dateTimeString;
+				}
+				setInterval(updateDateTime, 1000);
+			</script>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,126 @@
+/* CSS for the body */
+body {
+	background-color: #c7edf8;
+	font: 16px Arial, sans-serif;
+	line-height: 1.5;
+	color: #333;
+}
+
+/* CSS for the html */
+html {
+	scroll-behavior: smooth;
+}
+
+/* CSS for the .headings class */
+.headings {
+	font-size: 25px;
+	line-height: 20px;
+	color: plum;
+	font-family: 'Lucida Console', Courier, monospace;
+	padding: 4px;
+	margin-left: 6px;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: bold;
+	font-css: italic;
+}
+
+/* CSS for h1  */
+h1.headings {
+	color: brown;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	font-size: 36px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+/* CSS for h2  */
+h2.headings {
+	font-style: italic;
+	font-size: 24px;
+	margin-top: 30px;
+}
+
+/* CSS for h3  */
+h3.headings {
+	width: 25px;
+}
+
+/* CSS for p  */
+p {
+	border: 5px solid;
+  	border-image: linear-gradient(to right, springgreen 100%) 1;
+}
+
+/* CSS for #para1 ID */
+#para1 {
+	color: navy;
+}
+
+/* CSS for img  */
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	border: 2px solid blue;
+	border-radius: 5px;
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* CSS for div  */
+div {
+	border-radius: 5px;
+}
+
+/* CSS for #image-tag ID */
+#image-tag {
+	margin: 20px 0;
+	font-size: 20px;
+	font-style: bold;
+	font-weight: bold;
+	text-align: center;
+}
+
+/* CSS for ul  */
+ul {
+	color: cadetblue;
+	list-style: disc inside none;
+	margin-left: 1em;
+}
+
+/* CSS for li  */
+li {
+	margin: 10px 0;
+}
+
+/* CSS for aside  */
+aside {
+	padding-left: 20px;
+}
+
+/* CSS for nav  */
+nav {
+	display: flex;
+	justify-content: center;
+	margin: 20px 0;
+}
+
+/* CSS for nav a  */
+nav a {
+	color: #333;
+	text-decoration: none;
+	margin: 0 10px;
+	padding: 10px;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+/* CSS for nav a  on hover */
+nav a:hover {
+	background-color: #eee;
+}
+
+/* my sugestion for this task in the future to have actually visually appealing additions to the css using color 
+pallets as the styling needed to be applied according to the task is absoluty horrid */

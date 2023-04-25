@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Tribute</title>
+		<link rel="stylesheet" href="./myStyles.css">
+	</head>
+	<body>
+		<header>
+			<h1>Tribute to Alan Watts</h1>
+		</header>
+
+		<nav>
+			<a href="#timeline">Timeline</a>
+			<a href="#image">Image</a>
+		</nav>
+
+		<div id="image">
+			<img src="./alanwattsimage.jfif" alt="Tribute image alan watts">
+			<p id="image-tag">Alan Watts</p>
+        </div>
+
+		<h2>Timeline (1915-1973)</h2>
+		<aside>
+			<h3>Important points</h3>
+			<ul id="timeline">
+				<li>
+					Oneness and interconnectedness: Watts believed in the
+					interconnectedness of all things and the idea that we are all
+					part of a larger whole. He encouraged people to move beyond the
+					illusion of separateness and to recognize the fundamental unity
+					of all existence.
+				</li>
+				<li>
+					Mindfulness and presence: Watts emphasized the importance of
+					being present in the moment and cultivating a mindful awareness
+					of one's experience. He encouraged people to let go of worries
+					about the future or regrets about the past, and to focus on the
+					present moment as the only time that truly exists.
+				</li>
+				<li>
+					Spiritual exploration and self-discovery: Watts believed that
+					each person has the potential for spiritual growth and
+					self-discovery, and he encouraged people to explore their own
+					inner landscapes in order to find meaning and purpose in their
+					lives. He believed that spiritual exploration could lead to a
+					greater sense of connection, creativity, and fulfillment in life.
+				</li>
+			</ul>
+			<a href="#top">Back to top</a>
+		</aside>
+		<footer>
+			<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+			<script>
+				function updateDateTime() {
+					let currentDate = new Date();
+					let dateTimeString = currentDate.toLocaleString();
+					document.getElementById('currentDateTime').innerHTML =
+						dateTimeString;
+				}
+				setInterval(updateDateTime, 1000);
+			</script>
+		</footer>
+	</body>
+</html>
