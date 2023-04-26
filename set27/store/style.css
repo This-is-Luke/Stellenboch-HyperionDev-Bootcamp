@@ -1,0 +1,116 @@
+/* set the html style and height */
+html {
+	position: relative;
+	min-height: 100%;
+	scroll-behavior: smooth;
+}
+
+/* Set the body element to have a margin and padding, and an overflow of scroll */
+body {
+	margin: 0 0 100px;
+	padding: 25px;
+	overflow: scroll;
+
+	/* Set the background to a linear gradient */
+	background: linear-gradient(
+		45deg,
+		rgba(184, 184, 184, 1) 0%,
+		rgb(24, 149, 187) 100%
+	);
+}
+
+/* Style the header element */
+#header {
+	/* Set the background to a linear gradient */
+	background: linear-gradient(
+		-45deg,
+		rgba(184, 184, 184, 1) 0%,
+		rgb(24, 149, 187) 100%
+	);
+	color: whitesmoke;
+
+	/* Position the element absolutely at the top left of the page */
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	/* Set the height to 100px and the width to 100% */
+	height: 100px;
+	width: 100%;
+
+	/* Set the font size, family, style, and weight, and center the text */
+	font-size: xx-large;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-style: italic;
+	font-weight: bolder;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Style the products element */
+#products {
+	/* Set the margin and padding */
+	margin-top: 50px;
+	margin-bottom: 200px;
+	padding: 80px;
+}
+/* set the spacing of the indivual items a bit wider than default */
+.items{
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.pulse-on-hover {
+	transition: transform 0.9s;
+  }
+  
+  .pulse-on-hover:hover {
+	transform: scale(1.1);
+  }
+  
+
+/* Style the logo element */
+#logo {
+	/* Set the width and position the element absolutely at the bottom right of the page */
+	width: 300px;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.form-inline{
+	margin-top: 50px;
+}
+
+/* Style the inLineFormInputName, inLineFormInputEmail, and inLineFormInputAddress elements */
+#inLineFormInputName,
+#inLineFormInputEmail,
+#inLineFormInputAddress {
+	/* Set the margins */
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/* Style the submitButton element */
+#submitButton {
+	/* Set the margin */
+	margin: 5px;
+}
+
+/* Style the footer element */
+footer {
+	/* Set the background to a linear gradient and position the element absolutely at the bottom left of the page */
+	background: linear-gradient(
+		-45deg,
+		rgba(184, 184, 184, 1) 0%,
+		rgb(24, 149, 187) 100%
+	);
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	/* Set the height to 250px and the width to 100% */
+	height: 250px;
+	width: 100%;
+}
