@@ -11,6 +11,15 @@ body {
 #luke-front img { width: 130px; }
 #luke-back img { width: 230px; }
 
+.about {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: center;
+  padding-top: 200px;
+  padding-left: 100px;
+}
+
 .front, .back {
   grid-column-start: 1;
   grid-row-start: 1;
@@ -23,9 +32,9 @@ body {
   position: relative;
   width: 300px;
   height:auto;
+  padding-top: 100px;
   padding-left: 50%;
-  display: grid; /* Add this line */
-  gap: 2; /* Add this line */
+  display: grid; 
 }
 
 @media only screen and (max-width: 1000px) {
@@ -71,7 +80,7 @@ footer{
   
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 770px) {
   #portfoliophoto {
     /* display hide */
     display: none;
@@ -81,5 +90,20 @@ footer{
 @media only screen and (max-width: 400px) {
   footer{
     padding: 0
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .about {
+    padding-top: 0;
+    padding-bottom: 70px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .about {
+    padding-top: 100px;
+    padding-bottom: 70px;
+    padding-left: 0;
   }
 }
