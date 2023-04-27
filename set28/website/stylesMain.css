@@ -1,0 +1,85 @@
+body {
+  background-color: #000000;
+  padding-top: 70px;
+}
+
+/* Image styles */
+#this-front img { width: 100px; }
+#this-back img { width: 170px; }
+#is-front img { width: 50px; }
+#is-back img { width: 200px; }
+#luke-front img { width: 130px; }
+#luke-back img { width: 230px; }
+
+.front, .back {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  transform-origin: center;
+  transition: transform 0.2s;
+  backface-visibility: hidden;
+}
+
+.word-container {
+  position: relative;
+  width: 300px;
+  height:auto;
+  padding-left: 50%;
+  display: grid; /* Add this line */
+  gap: 2; /* Add this line */
+}
+
+@media only screen and (max-width: 1000px) {
+  .word-container {
+    padding-left: 0;
+  }
+}
+
+.word {
+  display: grid;
+}
+
+.front {
+  z-index: 1;
+}
+
+.back {
+  transform: rotateX(180deg);
+}
+
+.word:hover .front {
+  transform: rotateX(180deg);
+}
+
+.word:hover .back {
+  transform: rotateX(0);
+}
+
+footer{
+  color: white;
+  position: fixed;
+  bottom: 0;
+  padding-left: 40px;
+}
+
+/* Initial size */
+#portfoliophoto {
+  width: 30%;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+}
+
+@media only screen and (max-width: 400px) {
+  #portfoliophoto {
+    /* display hide */
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  footer{
+    padding: 0
+  }
+}
