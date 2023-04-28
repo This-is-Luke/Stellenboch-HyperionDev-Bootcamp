@@ -1,3 +1,5 @@
+<!-- as metioned before in indexMain the below is a duplication of that html with the contact form added -->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -12,13 +14,13 @@
 		<link rel="stylesheet" href="../styles/contactStyles.css">
 	</head>
 	<body>
+		<header>
+			<div class="logo">
+				<a href="../indexMain.html" class="home-link"
+					><img src="../img/logo.png" alt="Logo"></a>
+			</div>
+		</header>
 
-        <header>
-            <div class="logo">
-              <a href="../indexMain.html" class="home-link"><img src="../img/logo.png" alt="Logo"></a>
-            </div>
-        </header>
-          
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
@@ -30,7 +32,7 @@
 							<span class="back" id="this-back">
 								<a href="../innerPages/hobbies.html">
 									<img
-										src="../img/100ppi/Asset 13hobbies.png"
+										src="../img/100ppi/Asset13hobbies.png"
 										alt="About">
 								</a>
 							</span>
@@ -74,8 +76,8 @@
 								<div class="contact" id="contact">
 									<h1>Contact</h1>
 									<p>
-										Would you like to contact me? Hire me? 
-                                        Or just say	Hey?
+										Would you like to contact me? Hire me? Or just say
+										Hey?
 									</p>
 								</div>
 							</div>
@@ -83,6 +85,7 @@
 					</div>
 
 					<!-- contact form -->
+					<!-- below is a contact form with a radio button as requested. -->
 					<div class="container">
 						<div class="row">
 							<div class="col">
@@ -90,17 +93,32 @@
 									action="mailto:lluminous.210@gmail.com"
 									method="post"
 									enctype="text/plain">
-                                    <fieldset>
-                                        <legend class="radio-buttons">Please select the type of service you require:</legend>
-                                        <div class="radio-buttons">
-                                          <input type="radio" id="serviceChoice1" name="service" value="consultation">
-                                          <label for="serviceChoice1">Consultation</label>
-                                          <input type="radio" id="serviceChoice2" name="service" value="development">
-                                          <label for="serviceChoice2">Development</label>
-                                          <input type="radio" id="serviceChoice3" name="service" value="maintenance">
-                                          <label for="serviceChoice3">Maintenance</label>
-                                        </div>
-                                      </fieldset>
+									<fieldset>
+										<legend class="radio-buttons">
+											Please select the type of service you require:
+										</legend>
+										<div class="radio-buttons">
+											<input
+												type="radio"
+												id="serviceChoice1"
+												name="service"
+												value="consultation">
+											<label for="serviceChoice1"
+												>Consultation</label>
+											<input
+												type="radio"
+												id="serviceChoice2"
+												name="service"
+												value="development">
+											<label for="serviceChoice2">Development</label>
+											<input
+												type="radio"
+												id="serviceChoice3"
+												name="service"
+												value="maintenance">
+											<label for="serviceChoice3">Maintenance</label>
+										</div>
+									</fieldset>
 									<div class="form-group">
 										<label for="name" class="form-lable">Name:</label>
 										<input
@@ -108,23 +126,21 @@
 											class="form-control"
 											id="name"
 											name="name"
-											required/>
+											required>
 									</div>
 									<div class="form-group">
 										<label for="email" class="form-lable"
-											>Email:</label
-										>
+											>Email:</label>
 										<input
 											type="email"
 											class="form-control"
 											id="email"
 											name="email"
-											required/>
+											required>
 									</div>
 									<div class="form-group">
 										<label for="message" class="form-lable"
-											>Message:</label
-										>
+											>Message:</label>
 										<textarea
 											class="form-control"
 											id="message"
@@ -140,32 +156,15 @@
 							</div>
 						</div>
 					</div>
-					<!-- end of contact form -->
 				</div>
 				<div class="col-md-4">
-					<!-- Add your content for the third column here -->
 					<img
 						id="portfoliophoto"
 						src="../img/portfoliophotoblack23.png"
 						alt="portfolio photo 2023"
-						class="img-fluid"/>
+						class="img-fluid">
 				</div>
 			</div>
 		</div>
-
-        <!-- <footer>
-            <div class="footer">
-            <p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
-            <script>
-                function updateDateTime() {
-                    let currentDate = new Date();
-                    let dateTimeString = currentDate.toLocaleString();
-                    document.getElementById('currentDateTime').innerHTML =
-                        dateTimeString;
-                }
-                setInterval(updateDateTime, 1000);
-            </script>
-            </div>
-        </footer> -->
-	</body>	
+	</body>
 </html>

@@ -1,101 +1,151 @@
+<!-- The wording of the task could be better, at one point it asks for a store, at another point it asks for a 
+hobbies page and at another point it asks for a web portfolio. That said this task took some time to complete, a full 16 hours -->
+
+<!-- 
+
+  Below is the main index page for my landing page that includes the 
+  about me section and the 3D word animation. I have included the testimonials as well.
+
+  The div with id container-fluid I use throughout all pages as a nav bar.
+
+  in all the pages I used bootstrap and css to achieve the styling I wanted
+  In each page I will include minimal comments as I have commented on the index page which is then duplicated partly on other pages.
+
+-->
+
+<!-- below is the start of the page, declaring it a html, english page with some basic meta  tags as well 
+as the CDN for bootstrap and the links to the css. -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>This Is Luke</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link rel="stylesheet" href="./styles/indexStyles.css">
-  </head>
-  <body>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>This Is Luke</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+			crossorigin="anonymous">
+		<link rel="stylesheet" href="./styles/indexStyles.css">
+	</head>
+	<body>
+		<!-- Below is the header of the page that also acts as a return to the about page -->
+		<header>
+			<div class="logo">
+				<a href="./indexMain.html" class="home-link"
+					><img src="./img/logo.png" alt="Logo"></a>
+			</div>
+		</header>
+		<!-- below is the bootstrap container for the dynamic "this is luke" tags that act as the nav bar -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="word-container mb-2">
+						<div class="word" id="this">
+							<span class="front" id="this-front">
+								<img src="./img/100ppi/this.png" alt="This">
+							</span>
+							<span class="back" id="this-back">
+								<a href="./innerPages/hobbies.html">
+									<img
+										src="./img/100ppi/Asset13hobbies.png"
+										alt="About">
+								</a>
+							</span>
+						</div>
+					</div>
 
-    <header>
-      <div class="logo">
-        <a href="./indexMain.html" class="home-link"><img src="./img/logo.png" alt="Logo"></a>
-      </div>
-    </header>
+					<div class="word-container mb-2">
+						<div class="word" id="is">
+							<span class="front" id="is-front">
+								<img src="./img/100ppi/is.png" alt="Is">
+							</span>
+							<span class="back" id="is-back">
+								<a href="./innerPages/projects.html">
+									<img
+										src="./img/100ppi/projects.png"
+										alt="Projects">
+								</a>
+							</span>
+						</div>
+					</div>
 
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-md-3">
-
-            <div class="word-container mb-2">
-                <div class="word" id="this">
-                    <span class="front" id="this-front">
-                    <img src="./img/100ppi/this.png" alt="This"/>
-                    </span>
-                    <span class="back" id="this-back">
-                    <a href="./innerPages/hobbies.html">
-                        <img src="./img/100ppi/Asset 13hobbies.png" alt="About"/>
-                    </a>
-                    </span>
-                </div>
-            </div>
-            
-            <div class="word-container mb-2">        
-                <div class="word" id="is">
-                    <span class="front" id="is-front">
-                    <img src="./img/100ppi/is.png" alt="Is" />
-                    </span>
-                    <span class="back" id="is-back">
-                    <a href="./innerPages/projects.html">
-                        <img src="./img/100ppi/projects.png" alt="Projects"/>
-                    </a>
-                    </span>
-                </div>
-            </div>
-
-            <div class="word-container mb-2"> 
-                <div class="word">
-                    <span class="front" id="luke-front">
-                    <img src="./img/100ppi/luke.png" alt="Luke"/>
-                    </span>
-                    <span class="back" id="luke-back">
-                    <a href="./innerPages/contact.html">
-                        <img src="./img/100ppi/contact.png" alt="contact"/>
-                    </a>
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-          <!-- add a about div -->
-          <div class="container">
-            <div class="row">
-              <div class="col">
-                <div class="about" id="about">
-                  <h1>About</h1>
+					<div class="word-container mb-2">
+						<div class="word">
+							<span class="front" id="luke-front">
+								<img src="./img/100ppi/luke.png" alt="Luke">
+							</span>
+							<span class="back" id="luke-back">
+								<a href="./innerPages/contact.html">
+									<img src="./img/100ppi/contact.png" alt="contact">
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<!-- below is the next col of the bootstap that acts as a middle section to the page
+it contains the about and testimonials -->
+				<div class="col-md-4">
+					<!-- add a about div -->
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="about" id="about">
+									<h1>About</h1>
+									<p>
+										Hi there! I'm a creative and passionate person who
+										loves to explore new things. I graduated in 2010
+										and ran a photography business for a few years,
+										capturing beautiful moments and memories. Then I
+										switched to graphic design for 3 years, where I
+										learned how to create stunning visuals and logos.
+										Recently, I started coding and am doing a full
+										stack web dev bootcamp through Stellenbosch
+										University and Hyperion Dev. I'm excited to learn
+										more about web development and build amazing
+										websites and apps!
+									</p>
+                  <!-- add a h1, and p tag with testimonials -->
+                  <h1>Testimonials</h1>
                   <p>
-                  Hi there! I'm a creative and passionate person who loves to explore new things. 
-                  I graduated in 2010 and ran a photography business for a few years, 
-                  capturing beautiful moments and memories. 
-                  Then I switched to graphic design for 3 years, where I learned how to create stunning visuals and logos. 
-                  Recently, I started coding and am doing a full stack web dev bootcamp through Stellenbosch University and Hyperion Dev. 
-                  I'm excited to learn more about web development and build amazing websites and apps!</p>
-                </div>
-              </div>
-            </div>
-          </div>
-            
-        <div class="col-md-4">
-          <!-- Add your content for the third column here -->
-          <img id="portfoliophoto" src="./img/portfoliophotoblack23.png" alt="portfolio photo 2023" class="img-fluid">
-
-        </div>
-      </div>
-    </div>
-  </body>
-  <footer>
-    <p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
-    <script>
-      function updateDateTime() {
-        let currentDate = new Date();
-        let dateTimeString = currentDate.toLocaleString();
-        document.getElementById("currentDateTime").innerHTML =
-          dateTimeString;
-      }
-      setInterval(updateDateTime, 1000);
-    </script>
-  </footer>
+                    "Luke is a very creative and passionate person. He is
+                    always willing to learn new things and is very
+                    dedicated to his work. He is a great team player and
+                    always willing to help others. He is a very hard
+                    worker and always gives his best in everything he
+                    does."
+                  </p>
+                  <p>
+                    "What a wonderfull chap, always willing to help and
+                    learn new things. He is a very hard worker and his Autism is a gift to him."
+                  </p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Below is the last col in bootstrap with the profile photo attached -->
+					<div class="col-md-4">
+						<!-- Add your content for the third column here -->
+						<img
+							id="portfoliophoto"
+							src="./img/portfoliophotoblack23.png"
+							alt="portfolio photo 2023"
+							class="img-fluid">
+					</div>
+				</div>
+			</div>
+      <!-- below is my small scripted footer with a realtime date for copywrite. -->
+			<footer>
+				<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+				<script>
+					function updateDateTime() {
+						let currentDate = new Date();
+						let dateTimeString = currentDate.toLocaleString();
+						document.getElementById('currentDateTime').innerHTML =
+							dateTimeString;}
+					setInterval(updateDateTime, 1000);
+				</script>
+			</footer>
+		</div>
+	</body>
 </html>

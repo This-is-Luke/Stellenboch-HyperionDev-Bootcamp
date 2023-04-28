@@ -1,111 +1,180 @@
+/* Body styling */
 body {
-  background-color: #000000;
-  padding-top: 70px;
+	background-color: #000000;
+	padding-top: 10px;
 }
 
-/* Image styles */
-#this-front img { width: 100px; }
-#this-back img { width: 170px; }
-#is-front img { width: 50px; }
-#is-back img { width: 200px; }
-#luke-front img { width: 130px; }
-#luke-back img { width: 230px; }
-
-.about {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  padding-top: 200px;
-  padding-left: 100px;
+/* Header styling */
+header {
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
 }
 
-.front, .back {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  transform-origin: center;
-  transition: transform 0.2s;
-  backface-visibility: hidden;
+/* Logo styling */
+.logo {
+	display: flex;
+	align-items: center;
 }
 
-.word-container {
-  position: relative;
-  width: 300px;
-  height:auto;
-  padding-top: 100px;
-  padding-left: 50%;
-  display: grid; 
+/* Logo image styling */
+.logo img {
+	height: 50px;
+	margin-right: 10px;
 }
 
-
-
-.word {
-  display: grid;
+/* Individual image styling with specific widths */
+#this-front img {
+	width: 100px;
+}
+#this-back img {
+	width: 170px;
+}
+#is-front img {
+	width: 50px;
+}
+#is-back img {
+	width: 200px;
+}
+#luke-front img {
+	width: 130px;
+}
+#luke-back img {
+	width: 230px;
 }
 
-.front {
-  z-index: 1;
+/* Projects section styling */
+.projects {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	text-align: center;
+	padding-top: 90px;
+	padding-bottom: 50px;
 }
 
+/* Sets the width of the table to take up 100% of its parent element's width and collapses the borders of the table */
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+/* Sets the padding and alignment for table header and data cells, and adds a 1px solid border with a light gray color */
+th,
+td {
+	padding: 8px;
+	text-align: left;
+	border: 1px solid #ddd;
+}
+
+/* Sets the background color for the table header to a light gray color */
+thead {
+	background-color: #f2f2f2;
+}
+
+/* Makes the font weight of the table header text bold */
+thead th {
+	font-weight: bold;
+}
+
+/* Sets up the front and back sides of a container that is used to display a word on both sides */
+.front,
 .back {
-  transform: rotateX(180deg);
+	grid-column-start: 1;
+	grid-row-start: 1;
+	transform-origin: center;
+	transition: transform 0.2s;
+	backface-visibility: hidden;
 }
 
+/* Sets up the container that holds the front and back of the word, positions it relative to its parent element, and sets its width and padding */
+.word-container {
+	position: relative;
+	width: 300px;
+	height: auto;
+	padding-top: 100px;
+	padding-left: 10%;
+	display: grid;
+}
+
+/* Sets up the grid display for the front and back of the word */
+.word {
+	display: grid;
+}
+
+/* Sets a higher z-index for the front side of the word container */
+.front {
+	z-index: 1;
+}
+
+/* Rotates the back side of the word container 180 degrees along the X-axis to flip it over to the back side */
+.back {
+	transform: rotateX(180deg);
+}
+
+/* Sets up the hover effect for the word container, flipping it over to show the back side when the mouse hovers over the container */
 .word:hover .front {
-  transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
 
+/* Sets up the hover effect for the word container, flipping it over to show the front side when the mouse hovers over the container */
 .word:hover .back {
-  transform: rotateX(0);
+	transform: rotateX(0);
 }
 
-footer{
-  color: white;
-  position: fixed;
-  bottom: 0;
-  padding-left: 40px;
+/* Sets the text color to white, fixes the position of the footer element to the bottom of the viewport, and adds left padding */
+footer {
+	color: white;
+	position: fixed;
+	bottom: 0;
+	padding-left: 40px;
 }
 
-/* Initial size */
+/* Sets the width of the element with an ID of "portfoliophoto" to 30% of its parent element's width, positions it fixed to the bottom right corner of the viewport, and makes it a block-level element */
 #portfoliophoto {
-  width: 30%;
-  display: block;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  
+	width: 30%;
+	display: block;
+	position: fixed;
+	bottom: 0;
+	right: 0;
 }
 
+/* Changes the left padding of the element with a class of "word-container" to 0 when the screen width is less than or equal to 1000px */
 @media only screen and (max-width: 1000px) {
-  .word-container {
-    padding-left: 0;
-  }
+	.word-container {
+		padding-left: 0;
+	}
 }
 
+/* Hides the element with an ID of "portfoliophoto" when the screen width is less than or equal to 770px */
 @media only screen and (max-width: 770px) {
-  #portfoliophoto {
-    /* display hide */
-    display: none;
-  }
+	#portfoliophoto {
+		display: none;
+	}
 }
 
+/* Removes the padding from the footer element when the screen width is less than or equal to 400px */
 @media only screen and (max-width: 400px) {
-  footer{
-    padding: 0
-  }
+	footer {
+		padding: 0;
+	}
 }
 
+/* Changes the padding of the element with a class of "projects" when the screen width is less than or equal to 770px */
 @media only screen and (max-width: 770px) {
-  .about {
-    padding-top: 0;
-    padding-bottom: 70px;
-  }
+	.projects {
+		padding-top: 0;
+		padding-bottom: 70px;
+	}
 }
 
+/* Changes the padding of the element with a class of "projects" when the screen width is less than or equal to 1300px */
 @media only screen and (max-width: 1300px) {
-  .about {
-    padding-top: 100px;
-    padding-bottom: 70px;
-    padding-left: 0;
-  }
+	.projects {
+		padding-top: 100px;
+		padding-bottom: 70px;
+		padding-left: 0;
+	}
 }

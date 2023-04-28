@@ -1,165 +1,189 @@
+/* Set the background color and top padding for the body element */
 body {
-  background-color: #000000;
-  padding-top: 10px;
+	background-color: #000000;
+	padding-top: 10px;
 }
 
+/* Define the header element's height, display properties, and padding */
 header {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 20px;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
 }
 
+/* Set display properties for the logo container */
 .logo {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
 }
 
+/* Set the height and margin for the logo image */
 .logo img {
-  height: 50px;
-  margin-right: 10px;
+	height: 50px;
+	margin-right: 10px;
 }
 
-
-/* Image styles for this is luke */
-#this-front img { width: 100px; }
-#this-back img { width: 170px; }
-#is-front img { width: 50px; }
-#is-back img { width: 200px; }
-#luke-front img { width: 130px; }
-#luke-back img { width: 230px; }
-
-.radio-buttons{
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  text-align: left;
-  padding-top: 90px;
-  padding-left: 100px;
+/* Image styles for "this is luke" */
+#this-front img {
+	width: 100px;
+}
+#this-back img {
+	width: 170px;
+}
+#is-front img {
+	width: 50px;
+}
+#is-back img {
+	width: 200px;
+}
+#luke-front img {
+	width: 130px;
+}
+#luke-back img {
+	width: 230px;
 }
 
+/* Set the text color, font properties, and padding for the radio button labels */
+.radio-buttons {
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	text-align: left;
+	padding-top: 90px;
+}
+
+/* Set the text color, font properties, and padding for the contact section */
 .contact {
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 300;
-  text-align: center;
-  padding-top: 90px;
-  padding-left: 100px;
-  padding-bottom: 50px;
+	color: white;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	text-align: center;
+	padding-top: 90px;
+	padding-left: 100px;
+	padding-bottom: 50px;
 }
 
+/* Set the bottom padding for the form element */
 form {
-  padding-bottom: 50px;
+	padding-bottom: 50px;
 }
 
-.front, .back {
-  grid-column-start: 1;
-  grid-row-start: 1;
-  transform-origin: center;
-  transition: transform 0.2s;
-  backface-visibility: hidden;
-}
-
-.word-container {
-  position: relative;
-  width: 300px;
-  height:auto;
-  padding-top: 100px;
-  padding-left: 10%;
-  display: grid; 
-}
-
-.word {
-  display: grid;
-}
-
-.front {
-  z-index: 1;
-}
-
+/* Define the grid column, grid row, transform, and backface visibility properties for the front and back classes */
+.front,
 .back {
-  transform: rotateX(180deg);
+	grid-column-start: 1;
+	grid-row-start: 1;
+	transform-origin: center;
+	transition: transform 0.2s;
+	backface-visibility: hidden;
 }
 
+/* Set the position, width, height, padding, and display properties for the word container */
+.word-container {
+	position: relative;
+	width: 300px;
+	height: auto;
+	padding-top: 100px;
+	padding-left: 10%;
+	display: grid;
+}
+/* Styles for the word element, using grid for layout */
+.word {
+	display: grid;
+}
+
+/* Front element is positioned on top by default */
+.front {
+	z-index: 1;
+}
+
+/* Back element is rotated 180 degrees by default */
+.back {
+	transform: rotateX(180deg);
+}
+
+/* Rotate front and back elements on word hover */
 .word:hover .front {
-  transform: rotateX(180deg);
+	transform: rotateX(180deg);
 }
-
 .word:hover .back {
-  transform: rotateX(0);
+	transform: rotateX(0);
 }
 
-.form-lable{
-  color: white;
+/* Style for the form label */
+.form-lable {
+	color: white;
 }
 
-/* Initial size */
+/* Initial size and position for portfolio photo */
 #portfoliophoto {
-  width: 20%;
-  display: block;
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  
+	width: 20%;
+	display: block;
+	position: fixed;
+	bottom: 0;
+	right: 0;
 }
+
+/* Footer styles */
 .footer {
-  position: absolute;
-  color: white;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 20px;
+	position: absolute;
+	color: white;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
 }
 
+/* Media queries for responsive design */
 @media only screen and (max-width: 1000px) {
-  .word-container {
-    padding-left: 0;
-  }
+	.word-container {
+		padding-left: 0;
+	}
 }
 
 @media only screen and (max-width: 770px) {
-  #portfoliophoto {
-    /* display hide */
-    display: none;
-  }
+	#portfoliophoto {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 1200px) {
-  .contact {
-    padding: 0;
-  }
+	.contact {
+		padding: 0;
+	}
 }
 
 @media only screen and (max-width: 1200px) {
-  form {
-    padding-bottom: 50px;
-  }
+	form {
+		padding-bottom: 50px;
+	}
 }
 
 @media only screen and (max-width: 770px) {
-  body {
-    padding: 0;
-  }
+	body {
+		padding: 0;
+	}
 }
 
 @media only screen and (max-width: 770px) {
-  footer{
-    display: none;
-  }
+	footer {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 770px) {
-  .about {
-    padding-top: 0;
-    padding-bottom: 70px;
-  }
+	.about {
+		padding-top: 0;
+		padding-bottom: 70px;
+	}
 }
 
 @media only screen and (max-width: 1300px) {
-  .about {
-    padding-top: 100px;
-    padding-bottom: 70px;
-    padding-left: 0;
-  }
+	.about {
+		padding-top: 100px;
+		padding-bottom: 70px;
+		padding-left: 0;
+	}
 }
