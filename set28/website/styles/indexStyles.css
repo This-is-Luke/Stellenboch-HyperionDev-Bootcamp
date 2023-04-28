@@ -1,7 +1,26 @@
 body {
   background-color: #000000;
-  padding-top: 70px;
+  padding-top: 10px;
 }
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
 
 /* Image styles */
 #this-front img { width: 100px; }
@@ -33,15 +52,11 @@ body {
   width: 300px;
   height:auto;
   padding-top: 100px;
-  padding-left: 50%;
+  padding-left: 10%;
   display: grid; 
 }
 
-@media only screen and (max-width: 1000px) {
-  .word-container {
-    padding-left: 0;
-  }
-}
+
 
 .word {
   display: grid;
@@ -78,6 +93,12 @@ footer{
   bottom: 0;
   right: 0;
   
+}
+
+@media only screen and (max-width: 1000px) {
+  .word-container {
+    padding-left: 0;
+  }
 }
 
 @media only screen and (max-width: 770px) {

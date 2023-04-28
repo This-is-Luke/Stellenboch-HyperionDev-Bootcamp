@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>This Is Luke</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+			integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+			crossorigin="anonymous">
+		<link rel="stylesheet" href="../styles/contactStyles.css">
+	</head>
+	<body>
+
+        <header>
+            <div class="logo">
+              <a href="../indexMain.html" class="home-link"><img src="../img/logo.png" alt="Logo"></a>
+            </div>
+        </header>
+          
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="word-container mb-2">
+						<div class="word" id="this">
+							<span class="front" id="this-front">
+								<img src="../img/100ppi/this.png" alt="This">
+							</span>
+							<span class="back" id="this-back">
+								<a href="../innerPages/hobbies.html">
+									<img
+										src="../img/100ppi/Asset 13hobbies.png"
+										alt="About">
+								</a>
+							</span>
+						</div>
+					</div>
+
+					<div class="word-container mb-2">
+						<div class="word" id="is">
+							<span class="front" id="is-front">
+								<img src="../img/100ppi/is.png" alt="Is">
+							</span>
+							<span class="back" id="is-back">
+								<a href="../innerPages/projects.html">
+									<img
+										src="../img/100ppi/projects.png"
+										alt="Projects">
+								</a>
+							</span>
+						</div>
+					</div>
+
+					<div class="word-container mb-2">
+						<div class="word">
+							<span class="front" id="luke-front">
+								<img src="../img/100ppi/luke.png" alt="Luke">
+							</span>
+							<span class="back" id="luke-back">
+								<a href="../innerPages/contact.html">
+									<img src="../img/100ppi/contact.png" alt="contact">
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<!-- a contact div -->
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="contact" id="contact">
+									<h1>Contact</h1>
+									<p>
+										Would you like to contact me? Hire me? 
+                                        Or just say	Hey?
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- contact form -->
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<form
+									action="mailto:lluminous.210@gmail.com"
+									method="post"
+									enctype="text/plain">
+                                    <fieldset>
+                                        <legend class="radio-buttons">Please select the type of service you require:</legend>
+                                        <div class="radio-buttons">
+                                          <input type="radio" id="serviceChoice1" name="service" value="consultation">
+                                          <label for="serviceChoice1">Consultation</label>
+                                          <input type="radio" id="serviceChoice2" name="service" value="development">
+                                          <label for="serviceChoice2">Development</label>
+                                          <input type="radio" id="serviceChoice3" name="service" value="maintenance">
+                                          <label for="serviceChoice3">Maintenance</label>
+                                        </div>
+                                      </fieldset>
+									<div class="form-group">
+										<label for="name" class="form-lable">Name:</label>
+										<input
+											type="text"
+											class="form-control"
+											id="name"
+											name="name"
+											required/>
+									</div>
+									<div class="form-group">
+										<label for="email" class="form-lable"
+											>Email:</label
+										>
+										<input
+											type="email"
+											class="form-control"
+											id="email"
+											name="email"
+											required/>
+									</div>
+									<div class="form-group">
+										<label for="message" class="form-lable"
+											>Message:</label
+										>
+										<textarea
+											class="form-control"
+											id="message"
+											name="message"
+											rows="5"
+											required
+										></textarea>
+									</div>
+									<button type="submit" class="btn btn-primary">
+										Submit
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+					<!-- end of contact form -->
+				</div>
+				<div class="col-md-4">
+					<!-- Add your content for the third column here -->
+					<img
+						id="portfoliophoto"
+						src="../img/portfoliophotoblack23.png"
+						alt="portfolio photo 2023"
+						class="img-fluid"/>
+				</div>
+			</div>
+		</div>
+
+        <!-- <footer>
+            <div class="footer">
+            <p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+            <script>
+                function updateDateTime() {
+                    let currentDate = new Date();
+                    let dateTimeString = currentDate.toLocaleString();
+                    document.getElementById('currentDateTime').innerHTML =
+                        dateTimeString;
+                }
+                setInterval(updateDateTime, 1000);
+            </script>
+            </div>
+        </footer> -->
+	</body>	
+</html>

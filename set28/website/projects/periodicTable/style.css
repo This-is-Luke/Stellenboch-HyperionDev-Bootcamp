@@ -1,0 +1,789 @@
+/* I went with the grid solution as flex didnt give me the result I was looking for,
+I could have used the flex incorrectly though. */
+
+/* Define custom color variables */
+:root {
+	--color-1: #ffffcd;
+	--color-2: #dedeff;
+	--color-3: #ffd3d3;
+	--color-4: #cde6ff;
+	--color-5: #cafeca;
+	--color-6: #e8f2cb;
+	--color-7: #ffeacb;
+	--color-8: #c1ffff;
+	--color-9: #d4fff1;
+}
+
+/* Set up grid layout for the whole table */
+.whole-table {
+	display: grid;
+	grid-template-columns: repeat(18, 1fr);
+	grid-template-rows: repeat(9, 1fr);
+	height: 100%;
+	width: 100%;
+	grid-gap: 3px;
+}
+
+/* Set container width for smallest screens (mobile) */
+.container {
+	width: 50%;
+}
+
+/* Set container width for medium screens */
+@media (min-width: 500px) {
+	.container {
+		width: 75%;
+	}
+}
+
+/* Set container width for large screens */
+@media (min-width: 1200px) {
+	.container {
+		width: 100%;
+	}
+}
+
+/* Hide .responsive-image on larger screens */
+@media (min-width: 900px) {
+	.responsive-image {
+		display: none;
+	}
+}
+
+/* Show .responsive-image and hide .container on smaller screens */
+@media (max-width: 900px) {
+	.container {
+		display: none;
+	}
+	.responsive-image {
+		display: block;
+	}
+}
+
+.responsive-image {
+    max-width: 100%;
+}
+
+
+/* Set text alignment for number, symbol, and name classes */
+.number {
+	text-align: center;
+}
+.symbol {
+	text-align: center;
+}
+.name {
+	text-align: center;
+}
+
+/* Below is the grid postion list and color of all the individual elements
+in order to plae them in the correct spots */
+.element1 {
+	grid-column: 1;
+	grid-row: 1;
+	background-color: var(--color-1);
+}
+
+.element2 {
+	grid-column: 18;
+	grid-row: 1;
+	background-color: var(--color-7);
+}
+
+.element3 {
+	grid-column: 1;
+	grid-row: 2;
+	background-color: var(--color-3);
+}
+
+.element4 {
+	grid-column: 2;
+	grid-row: 2;
+	background-color: var(--color-2);
+}
+
+.element5 {
+	grid-column: 13;
+	grid-row: 2;
+	background-color: var(--color-6);
+}
+
+.element6 {
+	grid-column: 14;
+	grid-row: 2;
+	background-color: var(--color-1);
+}
+
+.element7 {
+	grid-column: 15;
+	grid-row: 2;
+	background-color: var(--color-1);
+}
+
+.element8 {
+	grid-column: 16;
+	grid-row: 2;
+	background-color: var(--color-1);
+}
+
+.element9 {
+	grid-column: 17;
+	grid-row: 2;
+	background-color: var(--color-1);
+}
+
+.element10 {
+	grid-column: 18;
+	grid-row: 2;
+	background-color: var(--color-7);
+}
+
+.element11 {
+	grid-column: 1;
+	grid-row: 3;
+	background-color: var(--color-3);
+}
+
+.element12 {
+	grid-column: 2;
+	grid-row: 3;
+	background-color: var(--color-2);
+}
+
+.element13 {
+	grid-column: 13;
+	grid-row: 3;
+	background-color: var(--color-5);
+}
+
+.element14 {
+	grid-column: 14;
+	grid-row: 3;
+	background-color: var(--color-6);
+}
+
+.element15 {
+	grid-column: 15;
+	grid-row: 3;
+	background-color: var(--color-1);
+}
+
+.element16 {
+	grid-column: 16;
+	grid-row: 3;
+	background-color: var(--color-1);
+}
+
+.element17 {
+	grid-column: 17;
+	grid-row: 3;
+	background-color: var(--color-1);
+}
+
+.element18 {
+	grid-column: 18;
+	grid-row: 3;
+	background-color: var(--color-7);
+}
+
+.element19 {
+	grid-column: 1;
+	grid-row: 4;
+	background-color: var(--color-3);
+}
+
+.element20 {
+	grid-column: 2;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element21 {
+	grid-column: 3;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element22 {
+	grid-column: 4;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element23 {
+	grid-column: 5;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element24 {
+	grid-column: 6;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element25 {
+	grid-column: 7;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element26 {
+	grid-column: 8;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element27 {
+	grid-column: 9;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element28 {
+	grid-column: 10;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element29 {
+	grid-column: 11;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element30 {
+	grid-column: 12;
+	grid-row: 4;
+	background-color: var(--color-4);
+}
+
+.element31 {
+	grid-column: 13;
+	grid-row: 4;
+	background-color: var(--color-5);
+}
+
+.element32 {
+	grid-column: 14;
+	grid-row: 4;
+	background-color: var(--color-6);
+}
+
+.element33 {
+	grid-column: 15;
+	grid-row: 4;
+	background-color: var(--color-6);
+}
+
+.element34 {
+	grid-column: 16;
+	grid-row: 4;
+	background-color: var(--color-1);
+}
+
+.element35 {
+	grid-column: 17;
+	grid-row: 4;
+	background-color: var(--color-1);
+}
+
+.element36 {
+	grid-column: 18;
+	grid-row: 4;
+	background-color: var(--color-7);
+}
+
+.element37 {
+	grid-column: 1;
+	grid-row: 5;
+	background-color: var(--color-3);
+}
+
+.element38 {
+	grid-column: 2;
+	grid-row: 5;
+	background-color: var(--color-2);
+}
+
+.element39 {
+	grid-column: 3;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element40 {
+	grid-column: 4;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element41 {
+	grid-column: 5;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element42 {
+	grid-column: 6;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element43 {
+	grid-column: 7;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element44 {
+	grid-column: 8;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element45 {
+	grid-column: 9;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element46 {
+	grid-column: 10;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element47 {
+	grid-column: 11;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element48 {
+	grid-column: 12;
+	grid-row: 5;
+	background-color: var(--color-4);
+}
+
+.element49 {
+	grid-column: 13;
+	grid-row: 5;
+	background-color: var(--color-5);
+}
+
+.element50 {
+	grid-column: 14;
+	grid-row: 5;
+	background-color: var(--color-5);
+}
+
+.element51 {
+	grid-column: 15;
+	grid-row: 5;
+	background-color: var(--color-6);
+}
+
+.element52 {
+	grid-column: 16;
+	grid-row: 5;
+	background-color: var(--color-6);
+}
+
+.element53 {
+	grid-column: 17;
+	grid-row: 5;
+	background-color: var(--color-1);
+}
+
+.element54 {
+	grid-column: 18;
+	grid-row: 5;
+	background-color: var(--color-7);
+}
+
+.element55 {
+	grid-column: 1;
+	grid-row: 6;
+	background-color: var(--color-3);
+}
+
+.element56 {
+	grid-column: 2;
+	grid-row: 6;
+	background-color: var(--color-2);
+}
+
+.element57 {
+	grid-column: 4;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element58 {
+	grid-column: 5;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element59 {
+	grid-column: 6;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element60 {
+	grid-column: 7;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element61 {
+	grid-column: 8;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element62 {
+	grid-column: 9;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element63 {
+	grid-column: 10;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element64 {
+	grid-column: 11;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element65 {
+	grid-column: 12;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element66 {
+	grid-column: 13;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element67 {
+	grid-column: 14;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element68 {
+	grid-column: 15;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element69 {
+	grid-column: 16;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element70 {
+	grid-column: 17;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element71 {
+	grid-column: 18;
+	grid-row: 8;
+	background-color: var(--color-8);
+}
+
+.element72 {
+	grid-column: 4;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element73 {
+	grid-column: 5;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element74 {
+	grid-column: 6;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element75 {
+	grid-column: 7;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element76 {
+	grid-column: 8;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element77 {
+	grid-column: 9;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element78 {
+	grid-column: 10;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element79 {
+	grid-column: 11;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element80 {
+	grid-column: 12;
+	grid-row: 6;
+	background-color: var(--color-4);
+}
+
+.element81 {
+	grid-column: 13;
+	grid-row: 6;
+	background-color: var(--color-5);
+}
+
+.element82 {
+	grid-column: 14;
+	grid-row: 6;
+	background-color: var(--color-5);
+}
+
+.element83 {
+	grid-column: 15;
+	grid-row: 6;
+	background-color: var(--color-5);
+}
+
+.element84 {
+	grid-column: 16;
+	grid-row: 6;
+	background-color: var(--color-6);
+}
+
+.element85 {
+	grid-column: 17;
+	grid-row: 6;
+	background-color: var(--color-1);
+}
+
+.element86 {
+	grid-column: 18;
+	grid-row: 6;
+	background-color: var(--color-7);
+}
+
+.element87 {
+	grid-column: 1;
+	grid-row: 7;
+	background-color: var(--color-3);
+}
+
+.element88 {
+	grid-column: 2;
+	grid-row: 7;
+	background-color: var(--color-2);
+}
+
+.element89 {
+	grid-column: 4;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element90 {
+	grid-column: 5;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element91 {
+	grid-column: 6;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element92 {
+	grid-column: 7;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element93 {
+	grid-column: 8;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element94 {
+	grid-column: 9;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element95 {
+	grid-column: 10;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element96 {
+	grid-column: 11;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element97 {
+	grid-column: 12;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element98 {
+	grid-column: 13;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element99 {
+	grid-column: 14;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element100 {
+	grid-column: 15;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element101 {
+	grid-column: 16;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element102 {
+	grid-column: 17;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element103 {
+	grid-column: 18;
+	grid-row: 9;
+	background-color: var(--color-9);
+}
+
+.element104 {
+	grid-column: 4;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element105 {
+	grid-column: 5;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element106 {
+	grid-column: 6;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element107 {
+	grid-column: 7;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element108 {
+	grid-column: 8;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element109 {
+	grid-column: 9;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element110 {
+	grid-column: 10;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element111 {
+	grid-column: 11;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element112 {
+	grid-column: 12;
+	grid-row: 7;
+	background-color: var(--color-4);
+}
+
+.element113 {
+	grid-column: 13;
+	grid-row: 7;
+	background-color: var(--color-5);
+}
+
+.element114 {
+	grid-column: 14;
+	grid-row: 7;
+	background-color: var(--color-5);
+}
+
+.element115 {
+	grid-column: 15;
+	grid-row: 7;
+	background-color: var(--color-5);
+}
+
+.element116 {
+	grid-column: 16;
+	grid-row: 7;
+	background-color: var(--color-5);
+}
+
+.element117 {
+	grid-column: 17;
+	grid-row: 7;
+	background-color: var(--color-1);
+}
+
+.element118 {
+	grid-column: 18;
+	grid-row: 7;
+	background-color: var(--color-7);
+}
+
+/* there must be a shorter way of doing this, perhaps a json quary or something */

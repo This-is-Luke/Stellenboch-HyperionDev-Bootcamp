@@ -1,0 +1,161 @@
+body {
+  background-color: #000000;
+  padding-top: 10px;
+}
+
+header {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* Image styles */
+#this-front img { width: 100px; }
+#this-back img { width: 170px; }
+#is-front img { width: 50px; }
+#is-back img { width: 200px; }
+#luke-front img { width: 130px; }
+#luke-back img { width: 230px; }
+
+.gaming-pic{
+  width: 300px;
+  object-fit: cover;
+  padding: 30px;
+}
+
+.hobbies {
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  text-align: left;
+  padding-top: 90px;
+  padding-left: 50px;
+}
+
+.front, .back {
+  grid-column-start: 1;
+  grid-row-start: 1;
+  transform-origin: center;
+  transition: transform 0.2s;
+  backface-visibility: hidden;
+}
+
+.word-container {
+  position: relative;
+  width: 300px;
+  height:auto;
+  padding-top: 100px;
+  padding-left: 10%;
+  display: grid; 
+}
+
+
+
+.word {
+  display: grid;
+}
+
+.front {
+  z-index: 1;
+}
+
+.back {
+  transform: rotateX(180deg);
+}
+
+.word:hover .front {
+  transform: rotateX(180deg);
+}
+
+.word:hover .back {
+  transform: rotateX(0);
+}
+
+footer{
+  color: white;
+  position: fixed;
+  bottom: 0;
+  padding-left: 40px;
+}
+
+/* Initial size */
+#portfoliophoto {
+  width: 15%;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  
+}
+.footer {
+  position: absolute;
+  color: white;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .word-container {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  #portfoliophoto {
+    /* display hide */
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .contact {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  form {
+    padding-bottom: 50px;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  body {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  footer{
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .hobbies {
+    padding-top: 0;
+    padding-bottom: 70px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .hobbies {
+    padding-top: 100px;
+    padding-bottom: 70px;
+    padding-left: 0;
+  }
+}
