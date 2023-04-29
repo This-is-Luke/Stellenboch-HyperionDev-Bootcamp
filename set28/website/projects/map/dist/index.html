@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Google Maps Web App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mini.css@3.0.1/dist/mini-default.min.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+
+    <style>/* Set the height and width of the map div */
+        #map {
+            height: 80%;
+            width: 80%;
+            margin: 0 auto;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        /* Set the height and width of the body and html elements */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }</style>
+</head>
+<body>
+    <header>
+        <h1>Find Nearby Places</h1>
+    </header>
+    <div id="map"></div>
+    <script>// Add your Mapbox access token here
+mapboxgl.accessToken = 'pk.eyJ1IjoidGhpcy1pcy1sdWtlIiwiYSI6ImNsaDB4M25vaDBlMXozZW9oaDZheDlxYzAifQ.ImJp9FFUYuaw1V2kaxgqQA';
+
+// Initialize the map
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'mapbox://styles/mapbox/streets-v11',
+  center: [-70.9, 42.35],
+  zoom: 9
+});</script>
+    
+</body>
+</html>
