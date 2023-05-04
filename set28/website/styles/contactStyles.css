@@ -1,5 +1,6 @@
 body {
 	height: 100%;
+	display: flex;
 	background-color: #000000;
 	padding-top: 10px;
 	color: white;
@@ -176,7 +177,10 @@ footer {
 	#portfoliophoto {
 		display: none;
 	}
+	
 }
+
+
 
 /* Styles for screens with a max-width of 400px */
 @media only screen and (max-width: 400px) {

@@ -19,7 +19,7 @@ const getPokemonData = async (pokemon) => {
 // console.log with a template litteral and a foreach arraow function to set the abilities object to display closer to what was in the task discription.
     console.log(`Name: \n${name}\nWeight: \n${weight}\nAbilities:`)
     abilities.forEach((ability) => {
-        console.log(`\nName: ${ability.name}\nURL: ${ability.url}\nIs hidden: ${ability.is_hidden}\nSlot: ${ability.slot}`)
+        console.log(`\nAbility: ${ability.name}, URL: ${ability.url}\nIs hidden: ${ability.is_hidden}\nSlot: ${ability.slot}`)
       });
   };
   
