@@ -1,31 +1,31 @@
-/* Set the background color and top padding for the body element */
 body {
+	height: 100%;
 	background-color: #000000;
 	padding-top: 10px;
+	color: white;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* Define the header element's height, display properties, and padding */
+/* Styling the header with a fixed height and making it a flex container with items aligned in the center and spaced out evenly. Also adding some padding on the left and right. */
 header {
 	height: 80px;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
+	padding-left: 10px;
 }
 
-/* Set display properties for the logo container */
+/* Styling the logo container as a flex container with items aligned in the center. */
 .logo {
 	display: flex;
 	align-items: center;
 }
 
-/* Set the height and margin for the logo image */
+/* Styling the logo image with a fixed height and some right margin. */
 .logo img {
 	height: 50px;
 	margin-right: 10px;
 }
 
-/* Image styles for "this is luke" */
+/* Styling the images with different IDs with different widths. */
 #this-front img {
 	width: 100px;
 }
@@ -42,35 +42,77 @@ header {
 	width: 130px;
 }
 #luke-back img {
-	width: 230px;
+	width: 80px;
 }
 
-/* Set the text color, font properties, and padding for the radio button labels */
-.radio-buttons {
+.form-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.col {
+	display: grid;
+	align-self: center;
+	width: 600px;
+	row-gap: 1em;
+  }
+  
+  label, input, textarea, button {
+	font-family: "Helvetica", sans-serif;
 	color: white;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	text-align: left;
-	padding-top: 90px;
-}
+  }
 
-/* Set the text color, font properties, and padding for the contact section */
-.contact {
-	color: white;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	text-align: center;
-	padding-top: 90px;
-	padding-left: 100px;
-	padding-bottom: 50px;
-}
+  input, textarea, button {
+	width: 100%;
+	padding: 0.5em;
+	margin: 0;
+	border: none;
+	background: none;
+	box-sizing: border-box;
+  }
 
-/* Set the bottom padding for the form element */
-form {
-	padding-bottom: 50px;
-}
+  input:focus, textarea:focus {
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 5px;
+  }
 
-/* Define the grid column, grid row, transform, and backface visibility properties for the front and back classes */
+  .radio-buttons input[type="radio"] {
+	display: none;
+  }
+  
+  .radio-buttons label {
+	display: inline-block;
+	padding: 0.5em 1em;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .radio-buttons input[type="radio"]:checked + label {
+	background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .btn-primary {
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	padding: 0.5em 1em;
+	border-radius: 5px;
+	cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+	background-color: #0056b3;
+  }
+
+  #email, #name, #message{
+	background-color: grey;
+  }
+  
+
+  
+  /* Styling the "front" and "back" classes with some grid properties, transformation origin, transition and backface visibility. */
 .front,
 .back {
 	grid-column-start: 1;
@@ -80,99 +122,70 @@ form {
 	backface-visibility: hidden;
 }
 
-/* Set the position, width, height, padding, and display properties for the word container */
+/* Styling the container for the words with some grid properties, position, width and height, padding, and display as a grid container. */
 .word-container {
 	position: relative;
-	width: 300px;
+	width: auto;
 	height: auto;
-	padding-top: 100px;
-	padding-left: 10%;
+	padding-top: 5px;
+	padding-left: 5px;
 	display: grid;
 }
-/* Styles for the word element, using grid for layout */
+
+/* Styling the word class as a grid container. */
 .word {
 	display: grid;
 }
 
-/* Front element is positioned on top by default */
+/* Styling the "front" class with a higher z-index. */
 .front {
 	z-index: 1;
 }
 
-/* Back element is rotated 180 degrees by default */
+/* Styling the "back" class with a 180 degree transformation on the X-axis. */
 .back {
 	transform: rotateX(180deg);
 }
 
-/* Rotate front and back elements on word hover */
+/* Adding a transformation to the "front" and "back" classes on hover. */
 .word:hover .front {
 	transform: rotateX(180deg);
 }
+
 .word:hover .back {
 	transform: rotateX(0);
 }
 
-/* Style for the form label */
-.form-lable {
+footer {
 	color: white;
-}
-
-/* Initial size and position for portfolio photo */
-#portfoliophoto {
-	width: 20%;
-	display: block;
-	position: fixed;
+	height: 40px;
+	background-color: #000000;
 	bottom: 0;
-	right: 0;
+	padding-left: 10px;
 }
 
-/* Footer styles */
-.footer {
-	position: absolute;
-	color: white;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 20px;
-}
-
-/* Media queries for responsive design */
+/* Styles for screens with a max-width of 1000px */
 @media only screen and (max-width: 1000px) {
 	.word-container {
-		padding-left: 0;
+		padding: 0;
 	}
 }
 
-@media only screen and (max-width: 770px) {
+/* Styles for screens with a max-width of 770px */
+@media only screen and (max-width: 1000px) {
 	#portfoliophoto {
 		display: none;
 	}
 }
 
-@media only screen and (max-width: 1200px) {
-	.contact {
-		padding: 0;
-	}
-}
-
-@media only screen and (max-width: 1200px) {
-	form {
-		padding-bottom: 50px;
-	}
-}
-
-@media only screen and (max-width: 770px) {
-	body {
-		padding: 0;
-	}
-}
-
-@media only screen and (max-width: 770px) {
+/* Styles for screens with a max-width of 400px */
+@media only screen and (max-width: 400px) {
 	footer {
-		display: none;
+		padding: 0;
 	}
 }
 
+/* Styles for screens with a max-width of 770px (additional) */
 @media only screen and (max-width: 770px) {
 	.about {
 		padding-top: 0;
@@ -180,6 +193,7 @@ form {
 	}
 }
 
+/* Styles for screens with a max-width of 1300px */
 @media only screen and (max-width: 1300px) {
 	.about {
 		padding-top: 100px;

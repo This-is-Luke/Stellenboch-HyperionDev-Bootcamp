@@ -1,31 +1,30 @@
-/* Body styling */
 body {
+	height: 100%;
 	background-color: #000000;
 	padding-top: 10px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* Header styling */
+/* Styling the header with a fixed height and making it a flex container with items aligned in the center and spaced out evenly. Also adding some padding on the left and right. */
 header {
 	height: 80px;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
+	padding-left: 10px;
 }
 
-/* Logo styling */
+/* Styling the logo container as a flex container with items aligned in the center. */
 .logo {
 	display: flex;
 	align-items: center;
 }
 
-/* Logo image styling */
+/* Styling the logo image with a fixed height and some right margin. */
 .logo img {
 	height: 50px;
 	margin-right: 10px;
 }
 
-/* Individual image styling with specific widths */
+/* Styling the images with different IDs with different widths. */
 #this-front img {
 	width: 100px;
 }
@@ -42,44 +41,66 @@ header {
 	width: 130px;
 }
 #luke-back img {
-	width: 230px;
+	width: 80px;
 }
 
-/* Projects section styling */
-.projects {
+h1, p{
 	color: white;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	text-align: center;
-	padding-top: 90px;
-	padding-bottom: 50px;
 }
 
-/* Sets the width of the table to take up 100% of its parent element's width and collapses the borders of the table */
-table {
-	width: 100%;
-	border-collapse: collapse;
+/* styling for the table */
+.projects-table {
+    font-family: sans-serif;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-/* Sets the padding and alignment for table header and data cells, and adds a 1px solid border with a light gray color */
-th,
-td {
-	padding: 8px;
-	text-align: left;
-	border: 1px solid #ddd;
+.projects-table table {
+    border-collapse: collapse;
+    width: 100%;
 }
 
-/* Sets the background color for the table header to a light gray color */
-thead {
-	background-color: #f2f2f2;
+.projects-table th,
+.projects-table td {
+    padding: 12px;
+    text-align: left;
 }
 
-/* Makes the font weight of the table header text bold */
-thead th {
-	font-weight: bold;
+.projects-table thead tr {
+    background-color: #006f98;
+    color: #ffffff;
 }
 
-/* Sets up the front and back sides of a container that is used to display a word on both sides */
+.projects-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.projects-table tbody tr:hover {
+    background-color: #ddd;
+}
+
+@media (max-width: 600px) {
+    .projects-table tr {
+        display: flex;
+        flex-wrap: wrap;
+    }
+	
+    .projects-table td {
+        flex: 1;
+        position: relative;
+    }
+
+    .projects-table td:before {
+        content: attr(data-title);
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-weight: bold;
+    }
+}
+
+/* Styling the "front" and "back" classes with some grid properties, transformation origin, transition and backface visibility. */
 .front,
 .back {
 	grid-column-start: 1;
@@ -89,50 +110,50 @@ thead th {
 	backface-visibility: hidden;
 }
 
-/* Sets up the container that holds the front and back of the word, positions it relative to its parent element, and sets its width and padding */
+/* Styling the container for the words with some grid properties, position, width and height, padding, and display as a grid container. */
 .word-container {
 	position: relative;
-	width: 300px;
+	width: auto;
 	height: auto;
-	padding-top: 100px;
-	padding-left: 10%;
+	padding-top: 5px;
+	padding-left: 5px;
 	display: grid;
 }
 
-/* Sets up the grid display for the front and back of the word */
+/* Styling the word class as a grid container. */
 .word {
 	display: grid;
 }
 
-/* Sets a higher z-index for the front side of the word container */
+/* Styling the "front" class with a higher z-index. */
 .front {
 	z-index: 1;
 }
 
-/* Rotates the back side of the word container 180 degrees along the X-axis to flip it over to the back side */
+/* Styling the "back" class with a 180 degree transformation on the X-axis. */
 .back {
 	transform: rotateX(180deg);
 }
 
-/* Sets up the hover effect for the word container, flipping it over to show the back side when the mouse hovers over the container */
+/* Adding a transformation to the "front" and "back" classes on hover. */
 .word:hover .front {
 	transform: rotateX(180deg);
 }
 
-/* Sets up the hover effect for the word container, flipping it over to show the front side when the mouse hovers over the container */
 .word:hover .back {
 	transform: rotateX(0);
 }
 
-/* Sets the text color to white, fixes the position of the footer element to the bottom of the viewport, and adds left padding */
 footer {
 	color: white;
-	position: fixed;
+	height: 40px;
+	background-color: #000000;
 	bottom: 0;
-	padding-left: 40px;
+	padding-left: 10px;
 }
 
-/* Sets the width of the element with an ID of "portfoliophoto" to 30% of its parent element's width, positions it fixed to the bottom right corner of the viewport, and makes it a block-level element */
+
+/* Styles for #portfoliophoto */
 #portfoliophoto {
 	width: 30%;
 	display: block;
@@ -141,38 +162,39 @@ footer {
 	right: 0;
 }
 
-/* Changes the left padding of the element with a class of "word-container" to 0 when the screen width is less than or equal to 1000px */
+/* Styles for screens with a max-width of 1000px */
 @media only screen and (max-width: 1000px) {
 	.word-container {
-		padding-left: 0;
+		padding: 0;
+		
 	}
 }
 
-/* Hides the element with an ID of "portfoliophoto" when the screen width is less than or equal to 770px */
-@media only screen and (max-width: 770px) {
+/* Styles for screens with a max-width of 770px */
+@media only screen and (max-width: 1000px) {
 	#portfoliophoto {
 		display: none;
 	}
 }
 
-/* Removes the padding from the footer element when the screen width is less than or equal to 400px */
+/* Styles for screens with a max-width of 400px */
 @media only screen and (max-width: 400px) {
 	footer {
 		padding: 0;
 	}
 }
 
-/* Changes the padding of the element with a class of "projects" when the screen width is less than or equal to 770px */
+/* Styles for screens with a max-width of 770px (additional) */
 @media only screen and (max-width: 770px) {
-	.projects {
+	.about {
 		padding-top: 0;
 		padding-bottom: 70px;
 	}
 }
 
-/* Changes the padding of the element with a class of "projects" when the screen width is less than or equal to 1300px */
+/* Styles for screens with a max-width of 1300px */
 @media only screen and (max-width: 1300px) {
-	.projects {
+	.about {
 		padding-top: 100px;
 		padding-bottom: 70px;
 		padding-left: 0;

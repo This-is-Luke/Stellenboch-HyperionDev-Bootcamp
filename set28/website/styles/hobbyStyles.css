@@ -1,76 +1,50 @@
-/* General styles */
+/* Setting the background color of the body to black and adding some padding to the top */
 body {
 	background-color: #000000;
 	padding-top: 10px;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* Header styles */
+/* Styling the header with a fixed height and making it a flex container with items aligned in the center and spaced out evenly. Also adding some padding on the left and right. */
 header {
 	height: 80px;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 0 20px;
+	padding-left: 10px;
 }
 
-/* Logo styles */
+/* Styling the logo container as a flex container with items aligned in the center. */
 .logo {
 	display: flex;
 	align-items: center;
 }
 
+/* Styling the logo image with a fixed height and some right margin. */
 .logo img {
 	height: 50px;
 	margin-right: 10px;
 }
 
-/* Individual image styles */
+/* Styling the images with different IDs with different widths. */
 #this-front img {
 	width: 100px;
 }
-
 #this-back img {
 	width: 170px;
 }
-
 #is-front img {
 	width: 50px;
 }
-
 #is-back img {
 	width: 200px;
 }
-
 #luke-front img {
 	width: 130px;
 }
-
 #luke-back img {
-	width: 230px;
+	width: 80px;
 }
 
-/* Gaming picture styles */
-.gaming-pic {
-	width: 300px;
-	object-fit: cover;
-	padding: 30px;
-}
-
-/* Hobbies text styles */
-.hobbies {
-	color: white;
-  background-color: rgb(48, 48, 48);
-  border-radius: 50px;
-	font-family: 'Roboto', sans-serif;
-	font-weight: 300;
-	text-align: left;
-	margin-top: 90px;
-	margin-left: 100px;
-  margin-bottom: 50px;
-  padding: 20px;
-}
-
-/* Front and back card styles */
+/* Styling the "front" and "back" classes with some grid properties, transformation origin, transition and backface visibility. */
 .front,
 .back {
 	grid-column-start: 1;
@@ -79,116 +53,98 @@ header {
 	transition: transform 0.2s;
 	backface-visibility: hidden;
 }
-
-/* Word container styles */
+.gaming-pic{
+	width: 300px;
+	margin: 10px;
+}
+/* Styling the container for the words with some grid properties, position, width and height, padding, and display as a grid container. */
 .word-container {
 	position: relative;
-	width: 300px;
+	width: auto;
 	height: auto;
-	padding-top: 100px;
-	padding-left: 10%;
+	padding-top: 5px;
+	padding-left: 5px;
 	display: grid;
 }
 
-/* Word styles */
+/* Styling the word class as a grid container. */
 .word {
 	display: grid;
 }
 
-/* Front card style */
+/* Styling the "front" class with a higher z-index. */
 .front {
 	z-index: 1;
 }
 
-/* Rotates the back face of a 3D object by 180 degrees */
+/* Styling the "back" class with a 180 degree transformation on the X-axis. */
 .back {
 	transform: rotateX(180deg);
 }
 
-/* Rotates the front face of a 3D object by 180 degrees when the word element is hovered */
+/* Adding a transformation to the "front" and "back" classes on hover. */
 .word:hover .front {
 	transform: rotateX(180deg);
 }
 
-/* Resets the rotation of the back face when the word element is hovered */
 .word:hover .back {
 	transform: rotateX(0);
 }
 
-/* Styles the footer with white text, fixed positioning, and padding */
-footer {
+ul, li, h1, p{
 	color: white;
-	position: fixed;
-	bottom: 0;
-	padding-left: 40px;
 }
 
-/* Styles the portfolio photo with fixed positioning and dimensions */
+footer {
+	color: white;
+	height: 40px;
+	background-color: #000000;
+	bottom: 0;
+	padding-left: 10px;
+}
+
+/* Styles for #portfoliophoto */
 #portfoliophoto {
-	width: 15%;
+	width: 30%;
 	display: block;
 	position: fixed;
 	bottom: 0;
 	right: 0;
 }
 
-/* Positions and styles the footer element */
-.footer {
-	position: absolute;
-	color: white;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	padding: 20px;
-}
-
-/* Media queries for responsive design adjustments */
-
+/* Styles for screens with a max-width of 1000px */
 @media only screen and (max-width: 1000px) {
 	.word-container {
-		padding-left: 0;
+		padding: 0;
+		
 	}
 }
 
-@media only screen and (max-width: 770px) {
+/* Styles for screens with a max-width of 770px */
+@media only screen and (max-width: 1000px) {
 	#portfoliophoto {
 		display: none;
 	}
 }
 
-@media only screen and (max-width: 1200px) {
-	.contact {
-		padding: 0;
-	}
-}
-
-@media only screen and (max-width: 1200px) {
-	form {
-		padding-bottom: 50px;
-	}
-}
-
-@media only screen and (max-width: 770px) {
-	body {
-		padding: 0;
-	}
-}
-
-@media only screen and (max-width: 770px) {
+/* Styles for screens with a max-width of 400px */
+@media only screen and (max-width: 400px) {
 	footer {
-		display: none;
+		padding: 0;
 	}
 }
 
+/* Styles for screens with a max-width of 770px (additional) */
 @media only screen and (max-width: 770px) {
-	.hobbies {
+	.about {
 		padding-top: 0;
 		padding-bottom: 70px;
 	}
 }
 
+/* Styles for screens with a max-width of 1300px */
 @media only screen and (max-width: 1300px) {
-	.hobbies {
+	.about {
 		padding-top: 100px;
 		padding-bottom: 70px;
 		padding-left: 0;
