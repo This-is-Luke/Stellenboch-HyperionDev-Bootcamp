@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Luke's Portfolio</title>
+		<link rel="stylesheet" href="./styles/indexStyles.css" />
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="#this">
+							<img
+								src="./images/nav/this.png"
+								alt="This"
+								class="front"
+								id="nav-this"
+							/>
+							<img
+								src="./images/nav/about.png"
+								alt="About"
+								class="back"
+								id="nav-about"
+							/>
+						</a>
+					</li>
+					<li>
+						<a href="#is">
+							<img
+								src="./images/nav/is.png"
+								alt="Is"
+								class="front"
+								id="nav-is"
+							/>
+							<img
+								src="./images/nav/projects.png"
+								alt="Projects"
+								class="back"
+								id="nav-projects"
+							/>
+						</a>
+					</li>
+					<li>
+						<a href="#luke">
+							<img
+								src="./images/nav/luke.png"
+								alt="Luke"
+								class="front"
+								id="nav-luke"
+							/>
+							<img
+								src="./images/nav/cv.png"
+								alt="Luke"
+								class="back"
+								id="nav-cv"
+							/>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main class="content">
+			<section id="landing-text">
+				<p>
+                    I dream of a world where the impossible happens every single day. 
+                    <br> Where technology and man are one. 
+                    <br> Where the very air we breathe is free from all worry.<br> Where the blind paint works of art and the deaf sing symphonies. 
+                    <br> Where the outcasts of today lead the nation's of tomorrow. <br> <br> Thankfully, dreams open doors to reality. 
+                    Realities far beyond the constraints of today.
+                </p>
+			</section>
+			<footer class="footer">
+				<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+				<script>
+					function updateDateTime() {
+						let currentDate = new Date();
+						let dateTimeString = currentDate.toLocaleString();
+						document.getElementById('currentDateTime').innerHTML =
+							dateTimeString;}
+					setInterval(updateDateTime, 1000);
+				</script>
+			</footer>
+		</main>
+	</body>
+</html>

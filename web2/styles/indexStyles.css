@@ -1,0 +1,106 @@
+body {
+	background-color: darkgray;
+	height: 100vh;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+    background-image: url(../images/back/indexback.jpg);
+    /* background-size:; */
+    background-position: stretch;
+}
+
+/* -------------------------nav bar */
+
+#nav-this {
+	width: 10vh;
+	margin-left: 8vh;
+}
+
+#nav-about {
+	width: 15vh;
+	margin-left: 8vh;
+}
+
+#nav-is {
+	width: 5vh;
+	margin-left: 8vh;
+}
+
+#nav-projects {
+	width: 19vh;
+	margin-left: 8vh;
+}
+
+#nav-luke {
+	width: 12vh;
+	margin-left: 8vh;
+}
+
+#nav-cv {
+	width: 8vh;
+	margin-left: 8vh;
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding-top: 5vh;
+}
+
+nav li {
+	margin-right: 1rem;
+	perspective: 1000px;
+}
+
+nav a {
+	display: inline-block;
+	width: 100px;
+	height: 50px;
+	position: relative;
+}
+
+nav img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	transition: transform 0.5s;
+}
+
+nav img.front {
+	z-index: 1;
+}
+
+nav img.back {
+	transform: rotateX(180deg);
+}
+
+nav a:hover img.front {
+	transform: rotateX(180deg);
+}
+
+nav a:hover img.back {
+	transform: rotateX(0);
+}
+
+/* ------------------------Landing text styles */
+#landing-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    text-align: right;
+	justify-content: center;
+	height: 70vh;
+}
+
+#landing-text p {
+	flex-grow: 1;
+	font-size: 1.5rem;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: white;
+}
+
+.footer {
+    position: relative;
+    bottom: 0
+}
