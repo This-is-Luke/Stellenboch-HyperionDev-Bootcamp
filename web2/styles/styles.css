@@ -1,0 +1,147 @@
+	body {
+		background-color: darkgray;
+		height: 100vh;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		background-image: url(../images/back/back.png);
+		background-size: cover;
+		background-position: center;
+	}
+	
+	.pngimage {
+		background-image: url(../images/back/pngimage.png);
+		background-size: cover;
+		background-position: center;
+	}
+	
+	.noSelect {
+		-webkit-tap-highlight-color: transparent;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+	}
+	.noSelect:focus {
+		outline: none !important;
+	}
+	
+
+/* -------------------------nav bar */
+
+header .home {
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+#nav-home {
+    width: 10em;
+}
+
+#nav-home-back {
+    width: 10em;
+}
+
+#nav-this {
+	width: 10em;
+
+}
+
+#nav-about {
+	width: 15em;
+
+}
+
+#nav-is {
+	width: 5em;
+
+}
+
+#nav-projects {
+	width: 18em;
+
+}
+
+#nav-luke {
+	width: 12em;
+
+}
+
+#nav-cv {
+	width: 8em;
+
+}
+
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding-top: 1em;
+}
+
+nav li {
+	margin-right: 1em;
+	padding-right: 2em;
+	perspective: 500px;
+}
+
+nav a {
+	display: inline-block;
+	height: 90px;
+	position: relative;
+}
+
+nav img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+	transition: transform 0.5s;
+}
+
+nav img.front {
+	z-index: 1;
+}
+
+nav img.back {
+	transform: rotateX(180deg);
+}
+
+nav a:hover img.front {
+	transform: rotateX(180deg);
+}
+
+nav a:hover img.back {
+	transform: rotateX(0);
+}
+
+/* ------------------------Landing text styles */
+#landing-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    text-align: right;
+	justify-content: center;
+	height: 100%;
+}
+
+#landing-text p {
+	flex-grow: 1;
+	font-size: 1.5em;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	color: white;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+	color: white;
+}
+
+@media screen and (min-width: 350) {
+#landing-text p{
+	padding-top: 20px;
+}
+}

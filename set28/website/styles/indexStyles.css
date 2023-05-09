@@ -103,7 +103,7 @@ header {
 footer {
 	color: white;
 	height: 40px;
-	position: fixed;
+	position: absolute;
 	background-color: #000000;
 	bottom: 0;
 	padding-left: 10px;

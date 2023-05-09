@@ -1,50 +1,30 @@
-<!-- The wording of the task could be better, at one point it asks for a store, at another point it asks for a 
-hobbies page and at another point it asks for a web portfolio. That said this task took some time to complete, a full 16 hours -->
-
-<!-- 
-
-  Below is the main index page for my landing page that includes the 
-  about me section and the 3D word animation. I have included the testimonials as well.
-
-  The div with id container-fluid I use throughout all pages as a nav bar.
-
-  in all the pages I used bootstrap and css to achieve the styling I wanted
-  In each page I will include minimal comments as I have commented on the index page which is then duplicated partly on other pages.
-
--->
-
-<!-- below is the start of the page, declaring it a html, english page with some basic meta  tags as well 
-as the CDN for bootstrap and the links to the css. -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>This Is Luke</title>
-		<link rel="stylesheet" href="./styles/indexStyles.css">
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+		/>
+		<link rel="stylesheet" href="./styles/indexStyles.css" />
 	</head>
 	<body>
-		<!-- Below is the header of the page that also acts as a return to the about page -->
-		<!-- <header>
-			<div class="logo">
-				<a href="./index.html" class="home-link"
-					><img src="./img/logo.png" alt="Logo"></a>
-			</div>
-		</header> -->
-		<!-- below is the bootstrap container for the dynamic "this is luke" tags that act as the nav bar -->
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-3">
 					<div class="word-container">
 						<div class="word" id="this">
 							<span class="front" id="this-front">
-								<img src="./img/100ppi/this.png" alt="This">
+								<img src="./img/100ppi/this.png" alt="This" />
 							</span>
 							<span class="back" id="this-back">
 								<a href="./innerPages/hobbies.html">
 									<img
 										src="./img/100ppi/Asset13hobbies.png"
-										alt="About">
+										alt="About"
+									/>
 								</a>
 							</span>
 						</div>
@@ -53,13 +33,14 @@ as the CDN for bootstrap and the links to the css. -->
 					<div class="word-container mb-2">
 						<div class="word" id="is">
 							<span class="front" id="is-front">
-								<img src="./img/100ppi/is.png" alt="Is">
+								<img src="./img/100ppi/is.png" alt="Is" />
 							</span>
 							<span class="back" id="is-back">
 								<a href="./innerPages/projects.html">
 									<img
 										src="./img/100ppi/projects.png"
-										alt="Projects">
+										alt="Projects"
+									/>
 								</a>
 							</span>
 						</div>
@@ -68,58 +49,65 @@ as the CDN for bootstrap and the links to the css. -->
 					<div class="word-container mb-2">
 						<div class="word">
 							<span class="front" id="luke-front">
-								<img src="./img/100ppi/luke.png" alt="Luke">
+								<img src="./img/100ppi/luke.png" alt="Luke" />
 							</span>
 							<span class="back" id="luke-back">
 								<a href="./img/thisIsLukeCV.pdf">
-									<img src="./img/100ppi/contact.png" alt="CV">
+									<img src="./img/100ppi/contact.png" alt="CV" />
 								</a>
 							</span>
 						</div>
 					</div>
 				</div>
-				<!-- below is the next col of the bootstap that acts as a middle section to the page
-it contains the about and testimonials -->
 				<div class="col-md-4">
-					<!-- add a about div -->
 					<div class="container">
 						<div class="row">
 							<div class="col">
 								<div class="about" id="about">
 									<h1>What?</h1>
 									<p>
-										I dream of a world where the impossible happens every single day. 
-										<br> Where technology and man are one. 
-										<br> Where the very air we breathe is free from all worry.<br> Where the blind paint works of art and the deaf sing symphonies. 
-										<br> Where the outcasts of today lead the nation's of tomorrow. <br> <br> Thankfully, dreams open doors to reality. 
+										I dream of a world where the impossible happens
+										every single day.
+										<br />
+										Where technology and man are one. <br />
+										Where the very air we breathe is free from all
+										worry.<br />
+										Where the blind paint works of art and the deaf
+										sing symphonies. <br />
+										Where the outcasts of today lead the nation's of
+										tomorrow. <br />
+										<br />
+										Thankfully, dreams open doors to reality.
 										Realities far beyond the constraints of today.
 									</p>
 								</div>
 							</div>
 						</div>
 					</div>
-						<!-- Add your content for the third column here -->
-						<img
-							id="portfoliophoto"
-							src="./img/portfoliophotoblack23webflipped.png"
-							alt="portfolio photo 2023"
-							class="img-fluid">
+					<div class="photo">
+					<img
+						id="portfoliophoto"
+						src="./img/portfoliophotoblack23webflipped.png"
+						alt="portfolio photo 2023"
+						class="img-fluid"
+					/>
 				</div>
-			</div>	
-      <!-- below is my small scripted footer with a realtime date for copywrite. -->
-	  <div class="footer-wrapper">
-			<footer>
-				<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
-				<script>
-					function updateDateTime() {
-						let currentDate = new Date();
-						let dateTimeString = currentDate.toLocaleString();
-						document.getElementById('currentDateTime').innerHTML =
-							dateTimeString;}
-					setInterval(updateDateTime, 1000);
-				</script>
-			</footer>
-		</div>
+				</div>
+			</div>
+			<div class="footer-wrapper">
+				<footer>
+					<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+					<script>
+						function updateDateTime() {
+							let currentDate = new Date();
+							let dateTimeString = currentDate.toLocaleString();
+							document.getElementById('currentDateTime').innerHTML =
+								dateTimeString;
+						}
+						setInterval(updateDateTime, 1000);
+					</script>
+				</footer>
+			</div>
 		</div>
 	</body>
 </html>
