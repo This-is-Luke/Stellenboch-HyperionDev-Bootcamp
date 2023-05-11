@@ -18,7 +18,7 @@ const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities?countryIds=ZA&nameP
 const options = {
   method: 'GET',
   headers: {
-    'X-RapidAPI-Key': '51556daa54msh2897bac3c8822cap178152jsn61d78544bfe3',
+    'X-RapidAPI-Key': '1e14d2c95amshffa1091afd72920p114ae3jsn64b5d4cb4500',
     'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
   }
 };
@@ -40,12 +40,12 @@ try {
 // -----------------------------------------------------------------
 
 async function getCityInfo (id){
-	await delay(2000)
+	await delay(1000)
 	const url = `https://wft-geo-db.p.rapidapi.com/v1/geo/cities/${id}`;
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '51556daa54msh2897bac3c8822cap178152jsn61d78544bfe3',
+		'X-RapidAPI-Key': '1e14d2c95amshffa1091afd72920p114ae3jsn64b5d4cb4500',
 		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
 	}
 };
@@ -83,7 +83,7 @@ const url = `https://weatherbit-v1-mashape.p.rapidapi.com/current?lon=${long}&la
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '86dc7cc9a5msh1fdd0ac95d66c8ap1742f3jsn2cc5256878a6',
+		'X-RapidAPI-Key': '1e14d2c95amshffa1091afd72920p114ae3jsn64b5d4cb4500',
 		'X-RapidAPI-Host': 'weatherbit-v1-mashape.p.rapidapi.com'
 	}
 };
@@ -109,8 +109,8 @@ try {
 	const cityInfo = await getCityInfo(cityWikiInfo);
 	await weatherApi(cityInfo.long, cityInfo.lat);
   }
-  await delay(4000)
-  fetchCityInfoAndWeather("pretoria");
+//   await delay(3000)
+//   fetchCityInfoAndWeather("pretoria");
 
 // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // front end
@@ -140,7 +140,7 @@ cityForm.addEventListener('submit', (event) => {
   // +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   
   async function displayCityInfo(cityName) {
-	  await delay(2000);
+	  await delay(1000);
 	  const cityWikiInfo = await getCityWiki(cityName);
 	  const cityInfo = await getCityInfo(cityWikiInfo);
 	  const cityTemp = await weatherApi(cityInfo.long, cityInfo.lat);

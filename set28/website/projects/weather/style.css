@@ -1,0 +1,48 @@
+/* Overall layout */
+form#cityForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  /* Style the input, label, and button elements */
+  input[type="text"], button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  #output{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  button {
+    background-color: #04AA6D;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #03a056;
+  }
+  
+  /* Responsive design */
+  @media screen and (max-width: 480px) {
+    form#cityForm {
+      display: flex;
+    }
+  }
+  

@@ -2,16 +2,17 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>This Is Luke</title>
-		<link rel="stylesheet" href="../styles/projectsStyles.css">
+		<link rel="stylesheet" href="../styles/projectsStyles.css" />
 	</head>
 	<body>
 		<header>
 			<div class="logo">
 				<a href="../index.html" class="home-link"
-					><img src="../img/logo.png" alt="Logo"></a>
+					><img src="../img/logo.png" alt="Logo"
+				/></a>
 			</div>
 		</header>
 
@@ -21,13 +22,14 @@
 					<div class="word-container mb-2">
 						<div class="word" id="this">
 							<span class="front" id="this-front">
-								<img src="../img/100ppi/this.png" alt="This">
+								<img src="../img/100ppi/this.png" alt="This" />
 							</span>
 							<span class="back" id="this-back">
 								<a href="../innerPages/hobbies.html">
 									<img
 										src="../img/100ppi/Asset13hobbies.png"
-										alt="Hobbies">
+										alt="Hobbies"
+									/>
 								</a>
 							</span>
 						</div>
@@ -36,13 +38,14 @@
 					<div class="word-container mb-2">
 						<div class="word" id="is">
 							<span class="front" id="is-front">
-								<img src="../img/100ppi/is.png" alt="Is">
+								<img src="../img/100ppi/is.png" alt="Is" />
 							</span>
 							<span class="back" id="is-back">
 								<a href="../innerPages/projects.html">
 									<img
 										src="../img/100ppi/projects.png"
-										alt="Projects">
+										alt="Projects"
+									/>
 								</a>
 							</span>
 						</div>
@@ -51,11 +54,11 @@
 					<div class="word-container mb-2">
 						<div class="word">
 							<span class="front" id="luke-front">
-								<img src="../img/100ppi/luke.png" alt="Luke">
+								<img src="../img/100ppi/luke.png" alt="Luke" />
 							</span>
 							<span class="back" id="luke-back">
 								<a href="../innerPages/contact.html">
-									<img src="../img/100ppi/contact.png" alt="contact">
+									<img src="../img/100ppi/contact.png" alt="contact" />
 								</a>
 							</span>
 						</div>
@@ -69,54 +72,46 @@
 								<div class="projects">
 									<h1>Projects</h1>
 									<p>
-										Below are some projects I have done in my
-										first few months of coding
+										Below are some projects I have done in my first
+										few months of coding
 									</p>
 								</div>
 							</div>
 						</div>
 					</div>
 					<!-- projects table -->
-                    <!-- below i used a table to show the projects as requested. -->
+					<!-- below i used a table to show the projects as requested. -->
 					<div class="container">
 						<div class="row">
 							<div class="col">
 								<div class="projects-table">
-									<table>
-										<thead>
-											<tr>
-												<th>Bootcamp</th>
-												<th>Personal</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td data-title="Personal">
-													<a
-														href="../projects/sunglassStore/index.html"
-														>Store</a>
-												</td>
-												<td data-title="Personal">
-													<a
-														href="../projects/mealselector/public/index.html"
-														>Meal Selector</a>
-												</td>
-												
-											</tr>
-											<tr>
-												<td data-title="Bootcamp">
-													<a
-														href="../projects/periodicTable/periodicTable.html"
-														>Periodic Table</a>
-												</td>
-												<td data-title="Bootcamp">
-													<a
-														href="../projects/map/index.html"
-														>Map</a>
-												</td>
-											</tr>
-										</tbody>
-									</table>
+									<ul>
+										<li>
+											<a
+												href="../projects/periodicTable/periodicTable.html"
+												>Periodic Table</a
+											>
+										</li>
+										<li>
+											<a href="../projects/map/index.html">Map</a>
+										</li>
+										<li>
+											<a href="../projects/sunglassStore/index.html"
+												>Store</a
+											>
+										</li>
+										<li>
+											<a
+												href="../projects/mealselector/public/index.html"
+												>Meal Selector</a
+											>
+										</li>
+										<li>
+											<a href="../projects/weather/index.html"
+												>Weather for SA city</a
+											>
+										</li>
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -131,7 +126,8 @@
 						let currentDate = new Date();
 						let dateTimeString = currentDate.toLocaleString();
 						document.getElementById('currentDateTime').innerHTML =
-							dateTimeString;}
+							dateTimeString;
+					}
 					setInterval(updateDateTime, 1000);
 				</script>
 			</footer>
