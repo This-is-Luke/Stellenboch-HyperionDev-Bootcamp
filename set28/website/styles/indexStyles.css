@@ -1,79 +1,62 @@
 /* Setting the background color of the body to black and adding some padding to the top */
 body {
 	min-height: 100%;
-	display: block;
+	display: grid;
 	background-color: #000000;
 	padding-top: 10px;
+	font-size: 1vw;
 	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 	overflow: scroll;
 }
 
 /* Styling the header with a fixed height and making it a flex container with items aligned in the center and spaced out evenly. Also adding some padding on the left and right. */
 header {
-	height: 80px;
-	display: flex;
-	padding-left: 10px;
-}
-
-.about{
-	color: white;
-	padding: 20px;
-	position: fixed;
-	right: 0;
-	text-align: right;
-
-}
-
-/* Styling the logo container as a flex container with items aligned in the center. */
-.logo {
-	display: flex;
-	align-items: center;
-}
-
-/* Styling the logo image with a fixed height and some right margin. */
-.logo img {
-	height: 50px;
-	margin-right: 10px;
+	width: 8rem;
+	display: absolute;
+	padding-left: 2vw;
 }
 
 /* Styling the images with different IDs with different widths. */
 #this-front img {
-	width: 100px;
+	width: 20rem;
 }
 #this-back img {
-	width: 170px;
+	width: 20rem;
 }
 #is-front img {
-	width: 50px;
+	width: 20rem;
 }
 #is-back img {
-	width: 200px;
+	width: 20rem;
 }
 #luke-front img {
-	width: 130px;
+	width: 20rem;
 }
 #luke-back img {
-	width: 80px;
+	width: 20rem;
 }
 
-/* Styling the "front" and "back" classes with some grid properties, transformation origin, transition and backface visibility. */
+header .home {
+	width: 5rem;
+}
+
 .front,
 .back {
 	grid-column-start: 1;
 	grid-row-start: 1;
-	transform-origin: center;
-	transition: transform 0.2s;
+	transform-origin: left;
+	transition: transform 0.4s;
 	backface-visibility: hidden;
 }
 
-/* Styling the container for the words with some grid properties, position, width and height, padding, and display as a grid container. */
-.word-container {
+.flip-word-container {
 	position: relative;
 	width: auto;
 	height: auto;
 	padding-top: 5px;
 	padding-left: 5px;
 	display: grid;
+	grid-auto-flow: row;
 }
 
 /* Styling the word class as a grid container. */
@@ -93,65 +76,155 @@ header {
 
 /* Adding a transformation to the "front" and "back" classes on hover. */
 .word:hover .front {
-	transform: rotateX(180deg);
+	transform: rotateX(-180deg);
 }
 
 .word:hover .back {
 	transform: rotateX(0);
+}	
+
+h1{
+	font-size: clamp(3rem, 5vw, 6rem);
+}
+
+h2{
+	font-size: clamp(2rem, 5vw, 4rem);
+
+}
+
+p{
+	font-size: clamp(1rem, 5vw, 2rem);
+}
+
+.highlight {
+	font-size: clamp(1.1rem, 5vw, 2.2rem);
+	color:aqua;
+}
+
+.grid-container{
+	display:grid;
+	grid-template-columns: 3fr 1fr;
+	grid-gap: 2rem;
+}
+
+.bio-grid {
+	color: white;
+	padding: 1rem;
+	position: relative;
+	text-align: right;
+
+}
+
+.photo-grid {
+	width: 100%;
+	position: relative;
+
+}
+
+#portfoliophoto{
+	width: 100%; 
+	padding-right: 1rem;
+	max-width: 40rem;
+	min-width: 6rem;
+}
+
+.projects{
+	margin-right: 20vw;
+	align-items: right;
+	text-align: right;
+}
+
+ul {
+	font-size: clamp(1rem, 3vw, 3rem);
+	padding-right: 20vw;
+	align-items: right;
+	text-align: right;
+  }
+  
+  ul li {
+	display: inline-block;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	padding: 1vw;
+	margin-top: 1vh;
+	border: 1vw solid #eee;
+	background-color: rgb(0, 187, 255);
+  }
+  
+  ul li a {
+	color: white;
+	display: block;
+	padding: 5px;
+  }
+  
+
+h1, h2, p{
+	color: white;
 }
 
 footer {
 	color: white;
-	height: 40px;
-	position: absolute;
+	height: 2rem;
+	position: fixed;
 	background-color: #000000;
 	bottom: 0;
-	padding-left: 10px;
+	margin-left: 10px;
 }
 
-/* Styles for #portfoliophoto */
-#portfoliophoto {
-	width: 30%;
-	display: block;
-	position: fixed;
-	bottom: 0.5;
-	/* right: 0; */
-}
 
 /* Styles for screens with a max-width of 1000px */
-@media only screen and (max-width: 1000px) {
-	.word-container {
-		padding: 0;
+@media only screen and (max-width: 730px) {
+	#this-front img {
+		width: 15rem;
+	}
+	#this-back img {
+		width: 15rem;
+	}
+	#is-front img {
+		width: 15rem;
+	}
+	#is-back img {
+		width: 15rem;
+	}
+	#luke-front img {
+		width: 15rem;
+	}
+	#luke-back img {
+		width: 15rem;
+	}
+	}
+
+	@media only screen and (min-width: 2000px) {
+		#this-front img {
+			width: 35rem;
+		}
+		#this-back img {
+			width: 35rem;
+		}
+		#is-front img {
+			width: 35rem;
+		}
+		#is-back img {
+			width: 35rem;
+		}
+		#luke-front img {
+			width: 35rem;
+		}
+		#luke-back img {
+			width: 35rem;
+		}
+		header .home {
+			width: 20rem;
+		}
+		h1{
+			font-size: clamp(4rem, 3vw, 5rem);
+		}
+		p{
+			font-size: clamp(3rem, 3vw, 4rem);
+		}
+		.highlight {
+			font-size: clamp(3.2rem, 3vw, 4.2rem);
+			color:aqua;
+		}
+		}
 		
-	}
-}
-
-/* Styles for screens with a max-width of 770px */
-@media only screen and (max-width: 1000px) {
-	#portfoliophoto {
-		display: none;
-	}
-}
-
-/* Styles for screens with a max-width of 400px */
-@media only screen and (max-width: 400px) {
-	footer {
-		padding: 0;
-	}
-}
-
-/* Styles for screens with a max-width of 770px (additional) */
-@media only screen and (max-width: 770px) {
-	.about {
-		padding-top: 0;
-		padding-bottom: 70px;
-	}
-}
-
-/* Styles for screens with a max-width of 1300px */
-@media only screen and (max-width: 1300px) {
-	.about {
-		padding-bottom: 70px;
-		padding-left: 0;
-	}
-}

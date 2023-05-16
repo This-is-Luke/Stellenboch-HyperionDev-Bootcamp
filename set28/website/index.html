@@ -4,110 +4,82 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>This Is Luke</title>
-		<link
-			rel="stylesheet"
-			href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-		/>
 		<link rel="stylesheet" href="./styles/indexStyles.css" />
 	</head>
 	<body>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="word-container">
-						<div class="word" id="this">
-							<span class="front" id="this-front">
-								<img src="./img/100ppi/this.png" alt="This" />
-							</span>
-							<span class="back" id="this-back">
-								<a href="./innerPages/hobbies.html">
-									<img
-										src="./img/100ppi/Asset13hobbies.png"
-										alt="About"
-									/>
-								</a>
-							</span>
-						</div>
+		<header>
+			<div class="home" id="home">
+				<a href="./index.html">
+				<img class="home" src="./img/100ppi/home.png" alt="home"
+				/></a></div>
+				<div class="flip-word-container">
+					<div class="word" id="this">
+						<span class="front" id="this-front">
+							<img src="./img/100ppi/this.png" alt="This"
+						/></span>
+						<span class="back" id="this-back">
+							<a href="./innerPages/hobbies.html">
+								<img
+									src="./img/100ppi/visual.png"
+									alt="About" /></a
+						></span>
 					</div>
-
-					<div class="word-container mb-2">
-						<div class="word" id="is">
-							<span class="front" id="is-front">
-								<img src="./img/100ppi/is.png" alt="Is" />
-							</span>
-							<span class="back" id="is-back">
-								<a href="./innerPages/projects.html">
-									<img
-										src="./img/100ppi/projects.png"
-										alt="Projects"
-									/>
-								</a>
-							</span>
-						</div>
+					<div class="word" id="is">
+						<span class="front" id="is-front">
+							<img src="./img/100ppi/is.png" alt="Is"
+						/></span>
+						<span class="back" id="is-back">
+							<a href="./innerPages/projects.html">
+								<img
+									src="./img/100ppi/projects.png"
+									alt="Projects" /></a
+						></span>
 					</div>
-
-					<div class="word-container mb-2">
-						<div class="word">
-							<span class="front" id="luke-front">
-								<img src="./img/100ppi/luke.png" alt="Luke" />
-							</span>
-							<span class="back" id="luke-back">
-								<a href="./img/thisIsLukeCV.pdf">
-									<img src="./img/100ppi/contact.png" alt="CV" />
-								</a>
-							</span>
-						</div>
+					<div class="word" id="luke">
+						<span class="front" id="luke-front">
+							<img src="./img/100ppi/luke.png" alt="Luke"
+						/></span>
+						<span class="back" id="luke-back">
+							<a href="./img/thisIsLukeCV.pdf">
+								<img src="./img/100ppi/cv.png" alt="CV" /></a
+						></span>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="container">
-						<div class="row">
-							<div class="col">
-								<div class="about" id="about">
-									<h1>What?</h1>
-									<p>
-										I dream of a world where the impossible happens
-										every single day.
-										<br />
-										Where technology and man are one. <br />
-										Where the very air we breathe is free from all
-										worry.<br />
-										Where the blind paint works of art and the deaf
-										sing symphonies. <br />
-										Where the outcasts of today lead the nation's of
-										tomorrow. <br />
-										<br />
-										Thankfully, dreams open doors to reality.
-										Realities far beyond the constraints of today.
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="photo">
-					<img
-						id="portfoliophoto"
-						src="./img/portfoliophotoblack23webflipped.png"
-						alt="portfolio photo 2023"
-						class="img-fluid"
-					/>
-				</div>
-				</div>
-			</div>
-			<div class="footer-wrapper">
-				<footer>
-					<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
-					<script>
-						function updateDateTime() {
-							let currentDate = new Date();
-							let dateTimeString = currentDate.toLocaleString();
-							document.getElementById('currentDateTime').innerHTML =
-								dateTimeString;
-						}
-						setInterval(updateDateTime, 1000);
-					</script>
-				</footer>
-			</div>
+		</header>
+<div class="grid-container">
+	<div class="bio-grid">
+		<div class="about" id="about">
+			<h1>What?</h1>
+				<p>
+				I <span class="highlight">dream</span> of a world where the <span class="highlight">impossible</span> happens every single day.
+				<br />
+				Where <span class="highlight">technology</span> and <span class="highlight">man</span> are one. <br />
+				Where the very <span class="highlight">air</span> we breathe is <span class="highlight">free</span> from pain.<br />
+				Where the <span class="highlight">blind</span> paint works of art and the <span class="highlight">deaf</span> sing symphonies.
+				<br />
+				Where the <span class="highlight">outcasts</span> of today, <span class="highlight">lead</span> the nation's of tomorrow. <br />
+				<br />
+				Dreams open doors to reality, Realities far beyond
+				the <span class="highlight">constraints</span> of today.
+				</p>
+		</div>
+	</div>
+		<div class="photo-grid">
+			<img id="portfoliophoto" src="./img/portfoliophoto2023-small.png" alt="portfolio photo 2023"></div>
+</div>
+		<div class="footer-wrapper">
+			<footer>
+				<span>&copy; This-Is-Luke <span id="currentDateTime"></span></span>
+				<script>
+					function updateDateTime() {
+						let currentDate = new Date();
+						let dateTimeString = currentDate.toLocaleString();
+						document.getElementById('currentDateTime').innerHTML =
+							dateTimeString;
+					}
+					setInterval(updateDateTime, 1000);
+				</script>
+			</footer>
 		</div>
 	</body>
 </html>

@@ -1,0 +1,83 @@
+body {
+    font-family: 'Open Sans Light', Helvetica, Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .container {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .close {
+    font-size: 26px; /* Increase the font size of the delete button */
+    font-weight: bold; /* Make the delete button text bolder */
+    color: #ff0000; /* Change the delete button text color to red */
+    padding-left: 10px; /* Add some padding to the left of the delete button */
+    cursor: pointer; /* Change the cursor style to pointer when hovering over the delete button */
+  }
+  
+  /* Add hover effect for the delete button */
+  .close:hover {
+    color: #b30000; /* Change the delete button text color to a darker red when hovering */
+  }
+  
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  input[type="text"] {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+  }
+
+  input[type="text"]:focus {
+    border-color: #333333;
+  }
+
+  #addBtn {
+    margin-left: 10px;
+    padding: 5px 15px;
+    background-color: #99e0b2;
+    border: 0 none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .remove-button {
+    float: left;
+    cursor: pointer;
+    margin-right: 5px;
+  }  
+
+  #itemList {
+    list-style: none;
+    padding: 0;
+  }
+
+  #itemList li {
+    padding: 5px;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+  }
+
+  #itemList li:hover {
+    background-color: #f5f5f5;
+  }

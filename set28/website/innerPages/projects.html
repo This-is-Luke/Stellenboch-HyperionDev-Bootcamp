@@ -1,89 +1,63 @@
-<!-- as mentioned in indexMain comments, the below is aduplicate of that page so refer to it for comments -->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>This Is Luke</title>
-		<link rel="stylesheet" href="../styles/projectsStyles.css" />
+		<link rel="stylesheet" href="../styles/indexStyles.css" />
 	</head>
 	<body>
 		<header>
-			<div class="logo">
-				<a href="../index.html" class="home-link"
-					><img src="../img/logo.png" alt="Logo"
-				/></a>
-			</div>
-		</header>
-
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-3">
-					<div class="word-container mb-2">
-						<div class="word" id="this">
-							<span class="front" id="this-front">
-								<img src="../img/100ppi/this.png" alt="This" />
-							</span>
-							<span class="back" id="this-back">
-								<a href="../innerPages/hobbies.html">
-									<img
-										src="../img/100ppi/Asset13hobbies.png"
-										alt="Hobbies"
-									/>
-								</a>
-							</span>
-						</div>
+			<div class="home" id="home">
+				<a href="../index.html">
+				<img class="home" src="../img/100ppi/home.png" alt="home"
+				/></a></div>
+				<div class="flip-word-container">
+					<div class="word" id="this">
+						<span class="front" id="this-front">
+							<img src="../img/100ppi/this.png" alt="This"
+						/></span>
+						<span class="back" id="this-back">
+							<a href="../innerPages/hobbies.html">
+								<img
+									src="../img/100ppi/visual.png"
+									alt="About" /></a
+						></span>
 					</div>
-
-					<div class="word-container mb-2">
-						<div class="word" id="is">
-							<span class="front" id="is-front">
-								<img src="../img/100ppi/is.png" alt="Is" />
-							</span>
-							<span class="back" id="is-back">
-								<a href="../innerPages/projects.html">
-									<img
-										src="../img/100ppi/projects.png"
-										alt="Projects"
-									/>
-								</a>
-							</span>
-						</div>
+					<div class="word" id="is">
+						<span class="front" id="is-front">
+							<a href="../innerPages/projects.html">
+							<img src="../img/100ppi/is.png" alt="Is"
+						/></a>
+						</span>
+						<span class="back" id="is-back">
+							<a href="../innerPages/projects.html">
+								<img
+									src="../img/100ppi/projects.png"
+									alt="Projects" /></a
+						></span>
 					</div>
-
-					<div class="word-container mb-2">
-						<div class="word">
-							<span class="front" id="luke-front">
-								<img src="../img/100ppi/luke.png" alt="Luke" />
-							</span>
-							<span class="back" id="luke-back">
-								<a href="../innerPages/contact.html">
-									<img src="../img/100ppi/contact.png" alt="contact" />
-								</a>
-							</span>
-						</div>
+					<div class="word" id="luke">
+						<span class="front" id="luke-front">
+							<a href="../img/thisIsLukeCV.pdf">
+								<img src="../img/100ppi/luke.png" alt="Luke"
+						/></a>
+						</span>
+						<span class="back" id="luke-back">
+							<a href="../img/thisIsLukeCV.pdf">
+								<img src="../img/100ppi/cv.png" alt="CV" 
+						/></a
+						></span>
 					</div>
 				</div>
-				<!-- projects div -->
-				<div class="col-md-4">
-					<div class="container">
-						<div class="row">
-							<div class="col">
+		</header>
 								<div class="projects">
-									<h1>Projects</h1>
+									<h2>Projects</h2>
 									<p>
 										Below are some projects I have done in my first
 										few months of coding
 									</p>
 								</div>
-							</div>
-						</div>
-					</div>
-					<!-- projects table -->
-					<!-- below i used a table to show the projects as requested. -->
-					<div class="container">
-						<div class="row">
-							<div class="col">
 								<div class="projects-table">
 									<ul>
 										<li>
@@ -113,14 +87,9 @@
 										</li>
 									</ul>
 								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 
 			<footer>
-				<p>&copy; This-Is-Luke <span id="currentDateTime"></span></p>
+				<span>&copy; This-Is-Luke <span id="currentDateTime"></span></span>
 				<script>
 					function updateDateTime() {
 						let currentDate = new Date();

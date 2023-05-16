@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopping List</title>
+
+        <!-- Link Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+        <!-- External CSS link-->
+        <link rel="stylesheet" href="./css/styles.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h2>Shopping List</h2>
+            <p>
+                Click anywhere on the item to strikethough, <br>Click the X to remove item
+            </p>
+
+            <div class="header">
+                <input type="text" id="input" placeholder="Item">
+                <span onclick="updateList()" id="addBtn">Add Item</span>
+            </div>
+            <span class="close"></span>
+            <ul id="itemList"> </ul>
+        </div>
+
+        <script src="./js/main.js"></script>
+    </body>
+</html>
