@@ -16,16 +16,15 @@ body {
   }
 
   .close {
-    font-size: 26px; /* Increase the font size of the delete button */
-    font-weight: bold; /* Make the delete button text bolder */
-    color: #ff0000; /* Change the delete button text color to red */
-    padding-left: 10px; /* Add some padding to the left of the delete button */
-    cursor: pointer; /* Change the cursor style to pointer when hovering over the delete button */
+    font-size: 26px; 
+    font-weight: bold; 
+    color: #ff0000; 
+    padding-left: 10px; 
+    cursor: pointer; 
   }
   
-  /* Add hover effect for the delete button */
   .close:hover {
-    color: #b30000; /* Change the delete button text color to a darker red when hovering */
+    color: #b30000; 
   }
   
 

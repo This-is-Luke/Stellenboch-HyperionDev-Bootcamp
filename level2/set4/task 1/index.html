@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/styles.css">
+    <title>Book catalogue</title>
+</head>
+<body>
+    <!-- 
+        head, title
+
+        main, tag add info about book, form to recieve info
+            , author, title, genre, discription
+            , ul li to diplay previous books
+            , can add and remove books from list using x button
+     -->
+
+     <h1>Book Catalogue</h1>
+  
+     <h2>Add Book Information</h2>
+     <form id="book-form">
+       <label for="author">Author:</label>
+       <input type="text" id="author" required>
+       <br>
+       <label for="title">Title:</label>
+       <input type="text" id="title" required>
+       <br>
+       <label for="genre">Genre:</label>
+       <input type="text" id="genre" required>
+       <br>
+       <label for="description">Description:</label>
+       <textarea id="description" required></textarea>
+       <br>
+       <button type="submit">Add Book</button>
+     </form>
+     
+     <h2>Book List</h2>
+     <ul id="book-list"></ul>
+   
+     <script src="./js/main.js"></script>
+</body>
+</html>
