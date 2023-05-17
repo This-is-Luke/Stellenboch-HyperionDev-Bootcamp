@@ -1,5 +1,5 @@
-/*The assignments are starting to become more complex thank you im starting to learn more and even have to use Ai to assist in the logic (!!I do understand the importance of understanding the code made by AI and dont simply copy paste!!)
-In future re assesments of the material I would encourage the use of Ai more like phind.com as its going to be a paramount tool moving forward in coding in the future
+/*The assignments are starting to become more complex thank you! Im starting to learn more and even have to use Ai to assist in the logic (!!I do understand the importance of understanding the code made by AI and dont simply copy paste!!)
+In future re assesments of the task and course material I would encourage the use of Ai more like phind.com as its going to be a paramount tool moving forward for coders in the future
 I would suggest a section dedicated to how to prompt and site sources similarly to how the stack overflow section in the beginner material is structured*/
 
 /* 
@@ -7,10 +7,12 @@ income object to hold
     name
     amount
     is/isnot recurring
+    (salary, freelance, investments, rental, gift?)
 expenses object to hold
     name of expense
     amount
     is/isnot recurring
+    (groceries, rent, util, entertainment, transport)
 prompt
     diplay income and offer to add a expense object
 prompt
@@ -26,13 +28,13 @@ const storedIncomes = JSON.parse(sessionStorage.getItem("incomes"));
 const storedExpenses = JSON.parse(sessionStorage.getItem("expenses"));
 const storedSavings = parseFloat(sessionStorage.getItem("savings"));
 
-// Use stored data if available, otherwise use the default data
+// Use stored data if available, otherwise use the default data below
 const incomes = storedIncomes || [
-  { name: "Salary", amount: 25000, recurring: true },
-  { name: "Freelance", amount: 2000, recurring: false },
-  { name: "Investments", amount: 200, recurring: true },
-  { name: "Rental", amount: 100, recurring: true },
-  { name: "Gift", amount: 100, recurring: false }
+  { name: "Luke's Salary", amount: 22000, recurring: true },
+  { name: "Graphic Design Freelance", amount: 2000, recurring: false },
+  { name: "Investments", amount: 1200, recurring: true },
+  { name: "Tax Returns", amount: 2100, recurring: false },
+  { name: "Gifts", amount: 100, recurring: false }
 ];
 
 const expenses = storedExpenses || [
@@ -41,9 +43,8 @@ const expenses = storedExpenses || [
   { name: "Utilities", amount: 3500, recurring: true },
   { name: "Entertainment", amount: 1000, recurring: false },
   { name: "Transportation", amount: 3000, recurring: true },
-  { name: "Savings", amount: 2000, recurring: true }
 ];
-
+// set savings to 0 on load
 const savings = storedSavings || 0;
 
 // Update the displayed savings total
@@ -55,7 +56,7 @@ function displayItems(items, listId) {
   list.innerHTML = "";
   items.forEach(item => {
     const listItem = document.createElement("li");
-    listItem.innerText = `${item.name} - R${item.amount.toFixed(2)} (${item.recurring ? "Recurring" : "One-time"})`;
+    listItem.innerText = `${item.name} - R${item.amount.toFixed(2)} (${item.recurring ? "Recurring" : "Once-off"})`;
     list.appendChild(listItem);
   });
 }
@@ -75,77 +76,102 @@ function calculateDisposableIncome(incomes, expenses) {
 function promptForSavings() {
   const disposableIncome = calculateDisposableIncome(incomes, expenses);
 
-  const savings = parseFloat(prompt("How much of the remaining income would you like to put into savings?"));
+  const savings = parseFloat(prompt("How much should we add to savings from this new income ?"));
   if (!isNaN(savings)) {
     const remainingDisposableIncome = disposableIncome - savings;
-
-    // Alert remaining disposable income
-    alert("Total remaining disposable income: " + remainingDisposableIncome.toFixed(2));
 
     // Store data in session storage
     sessionStorage.setItem("remainingDisposableIncome", remainingDisposableIncome.toFixed(2));
 
-    // Update the savings total and disposable income
+    // call function to update the savings total and disposable income
     updateSavingsAndDisposableIncome(savings, remainingDisposableIncome);
   }
 }
 
-// Update the savings total and disposable income
+// function to update the savings total and disposable income
 function updateSavingsAndDisposableIncome(savings, remainingDisposableIncome) {
-  const savingsTotalEl = document.getElementById("savings-total");
-  const currentSavings = parseFloat(savingsTotalEl.innerText.slice(1));
+  const savingTotal = document.getElementById("savings-total");
+  const currentSavings = parseFloat(savingTotal.innerText.slice(1));
 
   const updatedSavings = currentSavings + savings;
 
+  // Store data in session storage
   sessionStorage.setItem("savings", updatedSavings.toFixed(2));
 
-  savingsTotalEl.innerText = 'R' + updatedSavings.toFixed(2);
+  savingTotal.innerText = 'R' + updatedSavings.toFixed(2);
 
   const disposableIncomeEl = document.getElementById("disposable-income");
   disposableIncomeEl.innerText = 'R' + remainingDisposableIncome.toFixed(2);
 }
+// callback function to set yes no instead of ok and cancel for boolean selection(access modal)
+function customConfirm(message, callback) {
+    const confirmModal = document.getElementById("confirm-modal");
+    const confirmMessage = document.getElementById("confirm-modal-message");
+    const confirmYes = document.getElementById("confirm-modal-yes");
+    const confirmNo = document.getElementById("confirm-modal-no");
+  
+    confirmMessage.textContent = message;
+    confirmModal.style.display = "block";
+  
+    confirmYes.onclick = function () {
+      callback(true);
+      confirmModal.style.display = "none";
+    };
+  
+    confirmNo.onclick = function () {
+      callback(false);
+      confirmModal.style.display = "none";
+    };
+  }  
 
-// Add income using a confirm box
+// Add income using a prompt box
 function addIncome() {
     const name = prompt("Enter the income name:");
     if (!name) return;
   
-    const amount = parseFloat(prompt("Enter the income amount:"));
-    if (isNaN(amount)) return;
+    let amount;
+    do {
+      amount = prompt("Enter the amount for this new income:");
+      if (isNaN(parseFloat(amount))) {
+        alert("Please enter a valid number for the amount.");
+      }
+    } while (isNaN(parseFloat(amount)));
   
-    const isRecurring = window.confirm("Is the income recurring?", "Yes,No");
+    customConfirm("Is the income from this new job recurring?", function (isRecurring) {
+      const newIncome = { name, amount: parseFloat(amount), recurring: isRecurring };
+      incomes.push(newIncome);
   
-    const newIncome = { name, amount, recurring: isRecurring };
-    incomes.push(newIncome);
+      sessionStorage.setItem("incomes", JSON.stringify(incomes));
   
-    sessionStorage.setItem("incomes", JSON.stringify(incomes));
-  
-    displayItems(incomes, "income-list");
+      displayItems(incomes, "income-list");
+      const updatedDisposableIncome = calculateDisposableIncome(incomes, expenses);
+      alert("New disposable income total: R" + updatedDisposableIncome.toFixed(2));
+    });
+
     promptForSavings();
-    alert("New disposable income total: R" + getTotalAmount(incomes).toFixed(2));
-}
-  
-// Add expense using a confirm box
+    
+  }
+        
+// Add expense using a prompt box
 function addExpense() {
     const name = prompt("Enter the expense name:");
     if (!name) return;
-  
+
     const amount = parseFloat(prompt("Enter the expense amount:"));
     if (isNaN(amount)) return;
-  
-    const isRecurring = window.confirm("Is the expense recurring?", "Yes,No");
-  
-    const newExpense = { name, amount, recurring: isRecurring };
-    expenses.push(newExpense);
-  
-    sessionStorage.setItem("expenses", JSON.stringify(expenses));
-  
-    displayItems(expenses, "expense-list");
-    calculateDisposableIncome(incomes, expenses);
-    alert("New disposable income total: R" + getTotalAmount(incomes).toFixed(2));
+
+    customConfirm("Is the expense recurring?", function(isRecurring) {
+        const newExpense = { name, amount, recurring: isRecurring };
+        expenses.push(newExpense);
+
+        sessionStorage.setItem("expenses", JSON.stringify(expenses));
+
+        displayItems(expenses, "expense-list");
+        calculateDisposableIncome(incomes, expenses);
+        
+    });
 }
 
-    
   // Call the initial functions to display the income and expense items and calculate the disposable income
   displayItems(incomes, "income-list");
   displayItems(expenses, "expense-list");

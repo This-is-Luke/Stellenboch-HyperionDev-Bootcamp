@@ -1,3 +1,5 @@
+/* some styling to make the front end look a bit better */
+
 body {
     font-family: Arial, sans-serif;
     background-image: radial-gradient(circle at center, #9ceeff, #e0e0e0);
@@ -13,7 +15,36 @@ body {
     color: #555;
     font-size: 1.5em;
   }
+
+  #income-list, #expense-list {
+    color: white;
+    display: inline-block;
+    width: auto;
+    background-color: #454545;
+    border-radius: 1rem;
+    padding: 1rem;
+    padding-left: 2rem;
+  }
+
+  #confirm-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
   
+  #confirm-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%;
+  }
+    
   button {
     background-color: #007bff;
     border: none;
