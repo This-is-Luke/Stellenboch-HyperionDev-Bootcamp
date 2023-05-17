@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./style/styles.css" />
+		<title>Budgeting site</title>
+	</head>
+	<body>
+		<!-- 
+        form to take income
+            name
+            amount
+            is/isnot recurring
+        prompt to take expense
+            name
+            amount
+            is/isnot recurring
+        display diposable income
+        promt for savings from diposable
+        after savings prompt alert with total remaing disposable income
+     -->
+
+		<h1>Disposable Income Calculator</h1>
+            <h2>Income</h2>
+		<ul id="income-list"></ul>
+            <button onclick="addIncome()">Add Income</button>
+            <h2>Expenses</h2>
+		<ul id="expense-list"></ul>
+            <button onclick="addExpense()">Add Expense</button>
+        <div>
+            <h3>Savings</h3>
+            <p>Total savings: <span id="savings-total">R0.00</span></p>
+        </div>
+		<h2>Total Disposable Income</h2>
+            <p id="disposable-income">0.00</p>
+
+		<script src="./js/main.js"></script>
+	</body>
+</html>
