@@ -1,0 +1,29 @@
+<!-- This example illustrates how to use the map method with a callback function.
+The callback function is used to add a <p> element to the page for each element in the array.  -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Array.map Example
+    </title>
+</head>
+
+
+<body>
+    <div id="log"></div>
+    <script>
+        const terms = ["JavaScript", "Node", "React", "Express", "MongoDB"];
+        let div = document.createElement("div");
+        let log = document.getElementById('log');
+        terms.map(function(name) {
+            let p = document.createElement("p");
+            p.innerHTML = name;
+            div.appendChild(p);
+        });
+
+        log.appendChild(div);
+    </script>
+</body>
+
+</html>

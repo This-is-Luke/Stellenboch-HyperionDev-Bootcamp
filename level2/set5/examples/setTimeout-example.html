@@ -1,0 +1,45 @@
+<!-- This example illustrates how the setTimeout method works. Notice that we create a method called 
+  'timeout_trigger' which we pass as an argument to the setTimeout method. 'timeout_trigger' is therefore
+  called 3000 milliseconds after the setTimeout method is called. -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>setTimeout example</title>
+  </head>
+  <body>
+  <h1>
+    Press the buttons below to see how setTimeout is used. Wait to see how the text below changes after a timeout of 
+    3 seconds.
+  </h1>
+    <script language="Javascript">
+
+    let timeout;
+
+    function timeout_trigger() {
+      let str = "The timeout has been triggered!";
+    let result = str.fontcolor("green");
+    document.getElementById('timeout_text').innerHTML = result;
+    }
+
+    function timeout_clear() {
+        clearTimeout(timeout);
+        document.getElementById('timeout_text').innerHTML = 'The timeout has been cleared';
+    }
+
+    function timeout_init() {
+        timeout = setTimeout('timeout_trigger()', 3000);
+        document.getElementById('timeout_text').innerHTML = 'The timeout has been started';
+    }
+
+    </script>
+
+    <div>
+        <input type="button" value="test timeout" onclick="timeout_init()" />
+        <input type="button" value="clear timeout" onclick="timeout_clear()" />
+    </div>
+    <br>
+    <h3 id="timeout_text"></h3>
+
+  </body>
+</html>
+<!-- Modified from here:https://www.electrictoolbox.com/using-settimeout-javascript/-->

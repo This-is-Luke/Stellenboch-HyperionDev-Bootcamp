@@ -1,0 +1,66 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #b7faff;
+    color: #000;
+}
+
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#grid-content {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    height: calc(100vh - 1rem);
+    padding-top: 1rem;
+}
+
+#weather-info {
+    display: inline-block;
+    background-color: #fff;
+    border: 5px solid #69d5ff;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+#weather-info p {
+    margin: 5px 0;
+}
+
+#weather-info:hover {
+    background-color: #00c3ff;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for elements with specific IDs */
+#current-temp:hover,
+#next-3-days-temp:hover,
+#precipitation-probabilities:hover {
+    color: #fff;
+    background-color: #00ff00;
+    border-radius: 1rem;
+    cursor: none;
+    transition: all 0.3s ease;
+}
+
+#current-temp,
+#next-3-days-temp,
+#precipitation-probabilities {
+    display: inline;
+    padding: 5px;
+}
+
+#time {
+    display: inline-block;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: #b7ffc5;
+    font-size: 1.5rem;
+}

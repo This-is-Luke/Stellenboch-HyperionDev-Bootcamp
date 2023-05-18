@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Fetch Example</title>
+  </head>
+  <body>
+    <script>
+/* To run this code:
+1. Copy 'Example 2' folder to your local machine.
+2. Navigate to this folder.
+4. You should now be able to execute this by opening it in a Chromium-based browser, pressing F12 and navigating to the
+console.
+
+In this example we use the Fetch API to fetch data about a book that is made available usign the Google Books API:
+ https://developers.google.com/books/docs/static-links
+To see what is returned when we call the fetch() function, copy and paste the URL that is passed as an argument to the 
+fetch function into your browser.
+*/
+
+// Create an array called 'items' - we will store the data that we retrieve using the fetch API in this variable.
+let items = []; 
+
+/* 
+  We use the fetch function below to fetch data using the argument specified (which is in this case is the URL 
+  for the Google Books API which will return json about books). Remember that the fetch function returns a promise 
+  that resolves to the Response to that request, whether it is successful or not.  Remember that a promise basically
+  allows the interpreter to carry on with other tasks while a function is executed without waiting for that function to 
+  finish. This is because the promise, ‘promises’ to let you know the outcome of the function once it is finished. The 
+  basic structure of a promise is: doSomething().then(successCallback, failureCallback);
+  A promise uses callbacks to execute different functions based on whether the desired action succeeded or failed.
+*/
+
+// fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
+//     .then(res => res.json())
+//     .then((result) => {
+//           items= result.items;
+//           console.log(items);
+//         }),
+//       // Note: it's important to handle errors here
+//       // instead of a catch() block so that we don't swallow
+//       // exceptions from actual bugs in our web application.
+//       (error) => {
+//        console.log(error);
+//       } 
+
+/* Step 1: The code above is written using arrow functions. Rewrite the code above without using any arrow functions.
+
+Remember that the basic syntax for an arrow function is :
+(param1, param2, …, paramN) => { statements } 
+
+
+Insert your code for step 1 below this comment:
+*/
+//use fetch to grab the url
+fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
+  //next function for res (response) to return json
+  .then(function (res) {
+    return res.json();
+  })
+  //next function for result, log items from result argument
+  .then(function (result) {
+    items = result.items;
+    console.log(items);
+  })
+  //try catch error without the try, simlpy function to log error
+  .catch(function (error) {
+    console.log(error);
+  });
+
+/* Step 2: Rewrite the above code using an async/await function below. */
+
+async function fetchBookStep2() {
+  try {
+    const res = await fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699");
+
+    if (!res.ok) {
+      throw Error(res.statusText);
+    }
+
+    const result = await res.json();
+    items = result.items;
+    console.log(items);
+  } catch (error) {
+    console.log(error);
+  }
+}
+//calll the function
+fetchBookStep2();
+
+/* Step 3: Copy and paste the URL for the API (https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699) into your browser
+to examine the data returned by google books. Now write the code to display only the title and description of the book returned.*/
+
+async function fetchbooksStep3() {
+  //try this block
+  try {
+    const res = await fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699");
+    // if things not ok, error out
+    if (!res.ok) {
+      throw Error(res.statusText);
+    }
+
+    // from the res const grab the json but await for the info first
+    const result = await res.json();
+    //from the result grab the items and put them in a const
+    const items = result.items;
+
+    if (items && items.length > 0) {
+      //assigning the book object to a const
+      const book = items[0].volumeInfo;
+      //from the book const, grab the title
+      const title = book.title;
+      //fomr the book const grab the description
+      const description = book.description;
+
+      //log the title and description
+      console.log(`Title: ${title}`);
+      console.log(`Description: ${description}`);
+    } else {
+      console.log("No books found");
+    }
+    // if try fails, catch error
+  } catch (error) {
+    console.log(error);
+  }
+}
+// call the function
+fetchbooksStep3()
+
+
+    </script>
+  </body>
+</html>
+
