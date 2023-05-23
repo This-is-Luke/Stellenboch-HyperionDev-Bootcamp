@@ -1,0 +1,227 @@
+html{
+  background:
+linear-gradient(45deg, #00202e 45px, transparent 45px)64px 64px,
+linear-gradient(45deg, #00202e 45px, transparent 45px,transparent 91px, #220d26 91px, #220d26 135px, transparent 135px),
+linear-gradient(-45deg, #00202e 23px, transparent 23px, transparent 68px,#00202e 68px,#00202e 113px,transparent 113px,transparent 158px,#00202e 158px);
+background-color:#220d26;
+background-size: 128px 128px;
+
+}
+
+h1{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2rem;
+  background-color: #f0f0f0;
+  border-radius: 2rem;
+  display: inline-block;
+  padding: 1rem;
+}
+
+h2{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.3rem;
+  background-color: #f0f0f0;
+  border-radius: 2rem;
+  display: inline-block;
+  padding: 1rem;
+}
+
+p{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #f0f0f0;
+  border-radius: 2rem;
+  display: inline-block;
+  padding: 1rem;
+}
+
+
+
+img{
+  width: 100%;
+  height: auto;
+}
+
+main {
+  
+  width: 85vw;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, auto);
+    grid-gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .hidden {
+    display: none;
+  }  
+  
+  section {
+    background-color: #f0f0f0;
+    border-radius: 2rem;
+    /* box shadow */
+    box-shadow: 0 10px 15px rgb(116, 218, 255);
+    padding: 20px;
+  }
+  
+  button, a {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+  }
+  
+  .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+  }
+  
+  .close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+  }
+  
+  .close-button:hover {
+    background-color: darkgray;
+  }
+  
+  .show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+  }
+  
+  /* The Modal (background) */
+#contactModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .comments-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .comments-modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  .comments-close-button {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .comments-close-button:hover,
+  .comments-close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-content {
+    /* Add any styles you want for the modal content */
+    padding: 20px;
+  }
+
+  #contactForm input[type="text"],
+#contactForm input[type="email"],
+#contactForm textarea
+label {
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 1rem;
+  color: #333;
+  font-size: 1rem;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+    
+/* media quaries for screen smaller than 900px */
+@media screen and (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, auto);
+  }
+}

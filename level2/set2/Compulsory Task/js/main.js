@@ -1,28 +1,28 @@
 // first i apologise for so many comments, it helped me in troubleshooting some logic errors and helps show my logic.
 
-// Initializing an empty array to store grocery items
-const groceries = []; 
-// Initializing an empty array to store indices of bought items
-const boughtItems = []; 
+// Initialize the 'groceries' array with items from local storage or an empty array
+const groceries = JSON.parse(localStorage.getItem("groceries")) || [];
+// Initialize the 'boughtItems' array with bought items from local storage or an empty array
+const boughtItems = JSON.parse(localStorage.getItem("boughtItems")) || [];
 
+displayItems();
 //  first I had to call the delete function to have that run before the diplay function 
 // to solve a logic error that would diplay a previously deleted item when a new item was added
 function deleteItem(index, listItem) {
-  // Removing the item from the 'groceries' array at the specified index
-  groceries.splice(index, 1);
-  // Finding the index of the item in the 'boughtItems' array
-  const boughtIndex = boughtItems.indexOf(index);
-  // Checking if the item exists in the 'boughtItems' array
-  if (boughtIndex !== -1) {
-    // Removing the item from the 'boughtItems' array
-    boughtItems.splice(boughtIndex, 1);
+  const retVal = confirm("Are you sure you want to delete this item?");
+
+  if (retVal == true) {
+    groceries.splice(index, 1);
+    const boughtIndex = boughtItems.indexOf(index);
+    if (boughtIndex !== -1) {
+      boughtItems.splice(boughtIndex, 1);
+    }
+    listItem.remove();
+    displayItems();
+
+    localStorage.setItem("groceries", JSON.stringify(groceries));
+    localStorage.setItem("boughtItems", JSON.stringify(boughtItems));
   }
-
-  // Removing the list item from the display
-  listItem.remove();
-
-  // Updating the display by calling the 'displayItems' function again
-  displayItems();
 }
 
 // start of the main function to diplay the items
@@ -70,51 +70,37 @@ function displayItems() {
 }
 
 function markAsBought(index) {
-  // Getting the HTML element with id "itemList" and storing it in the variable 'list'
   const list = document.getElementById("itemList");
-  // Accessing the list item at the specified index 
-  const listItem = list.children[index]; 
+  const listItem = list.children[index];
 
-  // Checking if the item is already marked as bought
-  if (boughtItems.includes(index)) { 
-    // Finding the index of the item in the 'boughtItems' array
-    const boughtIndex = boughtItems.indexOf(index); 
-    // Checking if the item exists in the 'boughtItems' array
-    if (boughtIndex !== -1) { 
-      // Removing the item from the 'boughtItems' array
-      boughtItems.splice(boughtIndex, 1); 
+  if (boughtItems.includes(index)) {
+    const boughtIndex = boughtItems.indexOf(index);
+    if (boughtIndex !== -1) {
+      boughtItems.splice(boughtIndex, 1);
     }
-    // Removing the line-through text decoration
-    listItem.style.textDecoration = "none"; 
+    listItem.style.textDecoration = "none";
   } else {
-    // Adding the index to the 'boughtItems' array
-    boughtItems.push(index); 
-    // Applying a line-through text decoration to indicate the item is bought
-    listItem.style.textDecoration = "line-through"; 
+    boughtItems.push(index);
+    listItem.style.textDecoration = "line-through";
   }
+
+  localStorage.setItem("boughtItems", JSON.stringify(boughtItems));
 }
 
 function updateList() {
-  // Getting the HTML element with id "input" and storing it in the variable 'input'
-  const input = document.getElementById("input"); 
+  const input = document.getElementById("input");
+  const newItem = input.value.trim();
 
-  // Getting the trimmed value of the input field
-  const newItem = input.value.trim(); 
-
-  // Checking if the input is empty
-  if (newItem === "") { 
-    // Displaying an alert to prompt the user to insert an item
-    alert("Please insert an item."); 
+  if (newItem === "") {
+    alert("Please insert an item.");
   } else {
-    // Adding the new item to the 'groceries' array
-    groceries.push(newItem); 
-    // Calling the 'displayItems' function to update the list
-    displayItems(); 
-    // Clearing the input field
-    input.value = ""; 
+    groceries.push(newItem);
+    displayItems();
+    input.value = "";
+
+    localStorage.setItem("groceries", JSON.stringify(groceries));
   }
 }
-
 const inputElement = document.getElementById("input");
 
 // Add an event listener for the 'keypress' event to the input element

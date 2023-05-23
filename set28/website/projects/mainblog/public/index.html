@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+		<script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+		<link rel="stylesheet" href="../css/style.css" />
+		<title>This is Luke - Blog</title>
+	</head>
+	<body>
+		<header>
+			<h1>Welcome to My Blog</h1>
+		</header>
+		<main>
+			<!-- article section -->
+			<section>
+				<h2 id="article1-title">
+					The Controversial Shift: Why a 4-Day Work Week and 6-Hour Work
+					Day is the Future of Productivity
+				</h2>
+				<img
+					src="../articles/article-images/6hourworkday-image1.jpg"
+					alt="Article 1 Image"
+					class="article-image"
+				/>
+				<p>In todays forever changing landscape the next leap in respect for humanity is a shift in work times</p>
+
+				<button class="like-btn">
+					Likes <span class="like-count">10124</span>
+				</button>
+				<button class="save-btn">Save</button>
+				<button class="comments-btn">Comments</button>
+				<a href="../articles/6hourWorkDay.html" class="view-full-article-btn" data-article-id="1">
+					View Full Article
+				  </a>
+			</section>
+			<section>
+				<h2 id="article2-title">Embracing the Future: Why Coding Interviews Should Include AI and
+					Allow Tooling</h2>
+				<img
+					src="../articles/article-images/aiincoding-wide.jpg"
+					alt="Article 2 Image"
+					class="article-image"
+				/>
+				<p>Its high time that interviews should include the use of advanced AI prompting to compile code as this is the future</p>
+				<p id="article2-text" class="hidden">
+					Full content of Article 2...
+				</p>
+
+				<button class="like-btn">
+					Likes <span class="like-count">9322</span>
+				</button>
+				<button class="save-btn">Save</button>
+				<button class="comments-btn">Comments</button>
+				<a href="../articles/aiincodinginterviews.html" class="view-full-article-btn" data-article-id="1">
+					View Full Article
+				  </a>
+			</section>
+			<section>
+				<h2 id="article3-title">Spelling the word "cat" wrong</h2>
+				<img
+					src="../articles/article-images/cat.jpg"
+					alt="Article 3 Image"
+					class="article-image"
+				/>
+				<p>Our Education System Will Mark the Spelling of "Cat" Wrong if you Would Spell it "Kat" or "Xqw" as Equally Incorrect.</p>
+				<p id="article3-text" class="hidden">
+					Full content of Article 3...
+				</p>
+
+				<button class="like-btn">
+					Likes <span class="like-count">0</span>
+				</button>
+				<button class="save-btn">Save</button>
+				<button class="comments-btn">Comments</button>
+				<a href="../articles/spellingcat.html" class="view-full-article-btn" data-article-id="1">
+					View Full Article
+				  </a>
+			</section>
+			<section>
+				<h2 id="article4-title">Our Education Systems Need a Drastic Overhaul Thanks to AI</h2>
+				<img
+					src="../articles/article-images/education.jpg"
+					alt="Article 1 Image"
+					class="article-image"
+				/>
+				<p>In the rapidly evolving world approaching singularity we must look to our old systems and rapidly ulter the education system</p>
+				<p id="article4-text" class="hidden">
+					Full content of Article 4...
+				</p>
+
+				<button class="like-btn">
+					Likes <span class="like-count">0</span>
+				</button>
+				<button class="save-btn">Save</button>
+				<button class="comments-btn">Comments</button>
+				<a href="../articles/aieducation.html" class="view-full-article-btn" data-article-id="1">
+					View Full Article
+				  </a>
+			</section>
+		</main>
+		<!-- comments modal -->
+		<div class="comments-modal">
+			<div class="comments-modal-content">
+				<span class="comments-close-button">×</span>
+				<h1>Comments</h1>
+				<form class="comment-form">
+					<label for="comment-input">Leave a comment:</label>
+					<textarea
+						name="comment-input"
+						class="comment-input"
+						rows="5"
+					></textarea>
+					<button type="submit">Submit</button>
+				</form>
+				<div class="comments"></div>
+			</div>
+		</div>
+
+		<!-- show saved articles modal -->
+		<button class="trigger">Show saved articles</button>
+		<div class="modal">
+			<div class="modal-content">
+				<span class="close-button">×</span>
+				<h1>Saved Articles</h1>
+				<h2>
+					Total saved Articles:
+					<span class="saved-articles-count">0</span>
+				</h2>
+				<ul class="saved-articles-list"></ul>
+			</div>
+		</div>
+		<!-- contact me modal -->
+		<button id="contactModalBtn">Contact Me</button>
+
+		<div id="contactModal" style="display: none">
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<form id="contactForm">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" required />
+					<br />
+					<label for="email">Email:</label>
+					<input type="email" id="email" name="email" required />
+					<br />
+					<label for="message">Message:</label>
+					<textarea id="message" name="message" required></textarea>
+					<br />
+					<input type="submit" value="Send" />
+				</form>
+			</div>
+		</div>
+		<script type="module" src="../js/main.js"></script>
+	</body>
+</html>
